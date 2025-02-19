@@ -10,7 +10,7 @@ function Header() {
                     <li>Pricing</li>
                     <li>Contact us</li>
                     <li>Log in</li>
-                    <li>Sign up</li>
+                    <li className='Sign-up-button'>Sign up</li>
                 </ul>
             </div>
         </div>
