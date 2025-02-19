@@ -1,0 +1,10 @@
+.Header {
+    background-color: #101010;
+    height: 100px;
+    width: auto;
+}
+
+.Header-logo {
+    width: 100px;
+    height: 100px;
+}
