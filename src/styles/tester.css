@@ -1,6 +1,6 @@
 .Header {
     background-color: #191919;
-    height: 75pt;
+    height: 6.25rem;
     width: auto; /* Ensure it takes full width */
     display: flex;
     align-items: center;
@@ -10,20 +10,20 @@
 }
 
 .Header-logo {
-    width: 75pt;
-    height: 75pt;
+    width: 6.25rem;
+    height: 6.25rem;
     object-fit: contain; /* Ensures the image scales properly */
-    margin-left: 10pt;
+    margin-left: 0.833rem;
 }
 
 .Header-links {
-margin: 0 20pt 0 0;
+margin: 0 0.833rem 0 0;
 }
 
 .Header-links ul {
     list-style: none;
     display: flex;
-    gap: 30pt; 
+    gap: 2.5rem; 
     margin: 0;
     padding: 0;
     align-items: center;
@@ -31,7 +31,7 @@ margin: 0 20pt 0 0;
 
 .Header-links {
     color: #f7f7f7;
-    font-size: 16pt;
+    font-size: 1.333rem;
     cursor: pointer;
     font-weight: 500;
 }
@@ -39,7 +39,7 @@ margin: 0 20pt 0 0;
 .Sign-up-button {
     color: #101010;
     background-color: #80ff00;
-    padding: 8px 16px;
-    border-radius: 7pt;
-    margin-left: 5pt;
+    padding: 0.5rem 1rem;
+    border-radius: 0.583rem;
+    margin-left: 0.417rem;
 }
