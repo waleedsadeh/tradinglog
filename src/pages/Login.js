@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../components/Header";
 
-function Home() {
+function Login() {
   return (
     <div>
-      <Header/>
-      <h1>Welcome to the Home Page</h1>
+        <Header/>
+        <h1>login mate</h1>
     </div>
   );
 }
 
-export default Home;
+export default Login;

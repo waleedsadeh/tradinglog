@@ -1,18 +1,19 @@
 import '../styles/Header.css';
 import logo from '../logo.png';
-// import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 function Header() {
     return (
         <div className='Header'>
-            {/* Logo links to Home */}
+            <NavLink to="/">
                 <img src={logo} className='Header-logo' alt='logo'/>
-            {/* Navigation Links */}
+            </NavLink>
             <div className='Header-links'>
                 <ul>
-                    <li>Pricing</li>
-                    <li>Contact Us</li>
-                    <li>Log in</li>
-                    <li className='Sign-up-button'>Sign up</li>
+                    <li><NavLink to="/pricing">Pricing</NavLink></li>
+                    <li><NavLink to="/contact">Contact Us</NavLink></li>
+                    <li><NavLink to="/login">Log in</NavLink></li>
+                    <li className='Sign-up-button'><NavLink to="/signup">Sign up</NavLink></li>
                 </ul>
             </div>
         </div>

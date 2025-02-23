@@ -4,8 +4,8 @@ import Header from "../components/Header";
 function Contact() {
   return (
     <div>
-      <Header />
-      <h1>Contact Us</h1>
+      <Header/>
+      <h1 color="#f7f7f7">Contact Us</h1>
     </div>
   );
 }

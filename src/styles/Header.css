@@ -29,17 +29,27 @@ margin: 0 20pt 0 0;
     align-items: center;
 }
 
-.Header-links {
+.Header-links a{
     color: #f7f7f7;
     font-size: 16pt;
     cursor: pointer;
     font-weight: 500;
+    text-decoration: none;
 }
 
-.Sign-up-button {
+.Sign-up-button a{
     color: #101010;
     background-color: #80ff00;
     padding: 8px 16px;
     border-radius: 7pt;
     margin-left: 5pt;
+}
+
+.Header-links a:hover {
+    color: #80ff00;
+}
+
+.Sign-up-button a:hover {
+    background-color: #f7f7f7;
+    color: #80ff00;
 }
