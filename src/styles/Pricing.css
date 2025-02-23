@@ -1,0 +1,168 @@
+.Pricing {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.pricing-container {
+    margin-top: 6.25rem;
+    margin-bottom: 6.25rem;
+    flex: 1;
+}
+
+.pricing-header h1 {
+    color: #f7f7f7;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.pricing-header p {
+    color: #f7f7f7;
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 6.25rem;
+    padding: 2rem;
+}
+
+.pricing-card-free{
+    background-color: #101010;
+    border-radius: 1rem;
+    border: 2px solid #f7f7f7;
+    width: 400px;
+    text-align: center;
+}
+
+.pricing-card-pro {
+    background-color: #f7f7f7;
+    border-radius: 1rem;
+    border: 2px solid #f7f7f7;
+    width: 400px;
+    text-align: center;
+}
+
+.pricing-card-free h2 {
+    color: #80FF00;
+    font-size: 2rem;
+}
+
+.pricing-card-pro h2 {
+    color: #101010;
+    font-size: 2rem;
+}
+
+.pricing-card-free h3 {
+    color: #f7f7f7;
+    font-size: 4rem;
+    margin: 0rem;
+}
+
+.pricing-card-pro h3 {
+    color: #101010;
+    font-size: 4rem;
+    margin: 0rem
+}
+
+.pricing-card-free p {
+    color: #f7f7f7;
+    font-size: 1rem;
+}
+
+.pricing-card-pro p {
+    color: #101010;
+    font-size: 1rem;
+}
+.pricing-button {
+    display: inline-block;
+    margin-block: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #f7f7f7;
+    color: #101010;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.premium-button {
+    display: inline-block;
+    margin-block: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #80FF00;
+    color: #101010;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+
+}
+
+.pricing-card-free-features h4 {
+    color: #f7f7f7;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+.pricing-card-pro-features h4 {
+    color: #101010;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+.pricing-card-free-features p {
+    color: #f7f7f7;
+    font-size: 1rem;
+}
+
+.pricing-card-pro-features p {
+    color: #101010;
+    font-size: 1rem;
+}
+
+.pricing-card-free-features ul {
+    list-style: none;
+    padding: 0 0 0.5rem 0;
+    margin: 0;
+
+}
+.pricing-card-pro-features ul {
+    list-style: none;
+    padding: 0 0 0.5rem 0;
+    margin: 0;
+}
+
+.pricing-card-free-features li {
+    color: #f7f7f7;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.pricing-card-pro-features li {
+    color: #101010;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.pricing-card-free-features li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}
+
+.pricing-card-pro-features li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}
+

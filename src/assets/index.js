@@ -7,6 +7,7 @@ import instagram from './instagram.png';
 import discord from './discord.png';
 import twitter from './twitter.png';
 import tiktok from './tiktok.png';
+import tick from './tick.png';
 
 export {
     graphfield2,
@@ -17,5 +18,6 @@ export {
     instagram,
     discord,
     twitter,
-    tiktok
+    tiktok,
+    tick
 }

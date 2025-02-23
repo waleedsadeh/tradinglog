@@ -32,7 +32,7 @@
     font-weight: 500;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     margin-right: 1rem; /* Add spacing between buttons */
 }
 
@@ -197,6 +197,7 @@
     padding: 4rem 6rem;
     display: flex;
     justify-content: center;
+    margin-bottom: 3rem;
 }
 
 .stats-container {
