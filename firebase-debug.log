@@ -1,0 +1,93 @@
+[debug] [2025-02-23T17:43:25.766Z] ----------------------------------------------------------------------
+[debug] [2025-02-23T17:43:25.769Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\walee\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting --debug
+[debug] [2025-02-23T17:43:25.770Z] CLI Version:   13.31.2
+[debug] [2025-02-23T17:43:25.770Z] Platform:      win32
+[debug] [2025-02-23T17:43:25.770Z] Node Version:  v23.7.0
+[debug] [2025-02-23T17:43:25.771Z] Time:          Sun Feb 23 2025 17:43:25 GMT+0000 (Greenwich Mean Time)
+[debug] [2025-02-23T17:43:25.771Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-02-23T17:43:25.936Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-02-23T17:43:25.942Z] > authorizing via signed-in user (waleedsadeh5@gmail.com)
+[debug] [2025-02-23T17:43:25.942Z] [iam] checking project tradinglog-waleed for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-02-23T17:43:25.944Z] Checked if tokens are valid: true, expires at: 1740334534714
+[debug] [2025-02-23T17:43:25.944Z] Checked if tokens are valid: true, expires at: 1740334534714
+[debug] [2025-02-23T17:43:25.945Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/tradinglog-waleed:testIamPermissions [none]
+[debug] [2025-02-23T17:43:25.946Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/tradinglog-waleed:testIamPermissions x-goog-quota-user=projects/tradinglog-waleed
+[debug] [2025-02-23T17:43:25.946Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/tradinglog-waleed:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-02-23T17:43:26.614Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/tradinglog-waleed:testIamPermissions 200
+[debug] [2025-02-23T17:43:26.616Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/tradinglog-waleed:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-02-23T17:43:26.617Z] Checked if tokens are valid: true, expires at: 1740334534714
+[debug] [2025-02-23T17:43:26.618Z] Checked if tokens are valid: true, expires at: 1740334534714
+[debug] [2025-02-23T17:43:26.619Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/tradinglog-waleed [none]
+[debug] [2025-02-23T17:43:26.815Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/tradinglog-waleed 200
+[debug] [2025-02-23T17:43:26.816Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/tradinglog-waleed {"projectId":"tradinglog-waleed","projectNumber":"31107457498","displayName":"tradinglog","name":"projects/tradinglog-waleed","resources":{"hostingSite":"tradinglog-waleed"},"state":"ACTIVE","etag":"1_0394d4ee-cbb0-495a-84ff-3c15969e879a"}
+[info] 
+[info] === Deploying to 'tradinglog-waleed'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-02-23T17:43:26.827Z] Checked if tokens are valid: true, expires at: 1740334534714
+[debug] [2025-02-23T17:43:26.828Z] Checked if tokens are valid: true, expires at: 1740334534714
+[debug] [2025-02-23T17:43:26.829Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/versions [none]
+[debug] [2025-02-23T17:43:26.829Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-02-23T17:43:28.282Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/versions 200
+[debug] [2025-02-23T17:43:28.284Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/versions {"name":"projects/31107457498/sites/tradinglog-waleed/versions/cc64ba6cd410552d","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[tradinglog-waleed]: beginning deploy... 
+[info] i  hosting[tradinglog-waleed]: found 15 files in build 
+[debug] [2025-02-23T17:43:28.313Z] [hosting] uploading with 200 concurrency
+[debug] [2025-02-23T17:43:28.319Z] Checked if tokens are valid: true, expires at: 1740334534714
+[debug] [2025-02-23T17:43:28.320Z] Checked if tokens are valid: true, expires at: 1740334534714
+[debug] [2025-02-23T17:43:28.322Z] [hosting] hash cache [YnVpbGQ] stored for 15 files
+[debug] [2025-02-23T17:43:28.322Z] [hosting][hash queue][FINAL] {"max":2,"min":0,"avg":0,"active":0,"complete":15,"success":15,"errored":0,"retried":0,"total":15,"elapsed":6}
+[debug] [2025-02-23T17:43:28.324Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/31107457498/sites/tradinglog-waleed/versions/cc64ba6cd410552d:populateFiles [none]
+[debug] [2025-02-23T17:43:28.324Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/31107457498/sites/tradinglog-waleed/versions/cc64ba6cd410552d:populateFiles {"files":{"/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49\r","/manifest.json":"a0459d7c18e9598c799e2730e0a63a6d4e11c94a5a008265374a2c457e172d21\r","/logo512.png":"11defcfbcd4129bebdc77e69ab7915868de43f61d2cb5c9224b66974aa5af901\r","/logo192.png":"69f724da062ea879f60540c26d567c79cdd9592a6411c5a74aae9407f1548b48\r","/index.html":"2b04760144d45b08d132a787b8ce5fdf550b0eb5edf2a3e13bc6c4b40bd292bc","/favicon.ico":"778231da089192407ab5b3e698edbf97780d80ad4eb272232b0da55960d12e22\r","/asset-manifest.json":"dd2e068e85883c6f4908d9f2b19d52951542df75031938d14c794d84492e0267","/static/media/logo.8a3a7587926baaa7b85e.png":"11defcfbcd4129bebdc77e69ab7915868de43f61d2cb5c9224b66974aa5af901","/static/js/main.da171600.js.map":"3562b08115bcf078e463b4c905c21098088086652afa4e645597653d79915899","/static/js/main.da171600.js.LICENSE.txt":"b66096bc0aff35730d07b1276c55f0fb447bf3b2fb7350efa7660b2a5145f6f1","/static/js/main.da171600.js":"f09324f657119d9a2257f8095d6d74f72f39a9e45476fef4208f82e789d011a3","/static/js/453.3c2b7816.chunk.js.map":"af7f49db5aa1bb6a201ee78944083a05353916a91649f03ccb97d84df7a79bf2","/static/js/453.3c2b7816.chunk.js":"0413f549f9ab0ff3129c0b958a700252b856e4969eed34dd72e2e1163b4eb05d","/static/css/main.3c5c9631.css.map":"2ed877dc6b2905015867cdefe5393766485fa4f810b669d92d633f75a6f00354","/static/css/main.3c5c9631.css":"ef855d9283ba71eb3af22f31ac0f1ba9a353c6f095518dc91cdf0c6c868db6ab"}}
+[debug] [2025-02-23T17:43:28.772Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/31107457498/sites/tradinglog-waleed/versions/cc64ba6cd410552d:populateFiles 200
+[debug] [2025-02-23T17:43:28.773Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/31107457498/sites/tradinglog-waleed/versions/cc64ba6cd410552d:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/cc64ba6cd410552d/files"}
+[debug] [2025-02-23T17:43:28.774Z] [hosting][populate queue][FINAL] {"max":456,"min":456,"avg":456,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":456}
+[debug] [2025-02-23T17:43:28.775Z] [hosting] uploads queued: 0
+[debug] [2025-02-23T17:43:28.775Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1740332608775}
+[info] i  hosting: upload complete 
+[info] +  hosting[tradinglog-waleed]: file upload complete 
+[debug] [2025-02-23T17:43:28.778Z] [hosting] deploy completed after 489ms
+[debug] [2025-02-23T17:43:28.778Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "tradinglog-waleed"
+    },
+    "version": "projects/31107457498/sites/tradinglog-waleed/versions/cc64ba6cd410552d"
+  }
+]
+[info] i  hosting[tradinglog-waleed]: finalizing version... 
+[debug] [2025-02-23T17:43:28.785Z] Checked if tokens are valid: true, expires at: 1740334534714
+[debug] [2025-02-23T17:43:28.786Z] Checked if tokens are valid: true, expires at: 1740334534714
+[debug] [2025-02-23T17:43:28.787Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/versions/cc64ba6cd410552d updateMask=status%2Cconfig
+[debug] [2025-02-23T17:43:28.789Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/versions/cc64ba6cd410552d {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2025-02-23T17:43:29.530Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/versions/cc64ba6cd410552d 200
+[debug] [2025-02-23T17:43:29.531Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/versions/cc64ba6cd410552d {"name":"projects/31107457498/sites/tradinglog-waleed/versions/cc64ba6cd410552d","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-02-23T17:43:26.387229Z","createUser":{"email":"waleedsadeh5@gmail.com"},"finalizeTime":"2025-02-23T17:43:28.213237Z","finalizeUser":{"email":"waleedsadeh5@gmail.com"}}
+[debug] [2025-02-23T17:43:29.531Z] [hosting] finalized version for tradinglog-waleed:[object Object]
+[info] +  hosting[tradinglog-waleed]: version finalized 
+[info] i  hosting[tradinglog-waleed]: releasing new version... 
+[debug] [2025-02-23T17:43:29.533Z] Checked if tokens are valid: true, expires at: 1740334534714
+[debug] [2025-02-23T17:43:29.533Z] Checked if tokens are valid: true, expires at: 1740334534714
+[debug] [2025-02-23T17:43:29.534Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/channels/live/releases versionName=projects%2F31107457498%2Fsites%2Ftradinglog-waleed%2Fversions%2Fcc64ba6cd410552d
+[debug] [2025-02-23T17:43:29.534Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/channels/live/releases {}
+[debug] [2025-02-23T17:43:30.188Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/channels/live/releases 200
+[debug] [2025-02-23T17:43:30.188Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/channels/live/releases {"name":"projects/31107457498/sites/tradinglog-waleed/channels/live/releases/1740332608184000","version":{"name":"projects/31107457498/sites/tradinglog-waleed/versions/cc64ba6cd410552d","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-02-23T17:43:26.387229Z","createUser":{"email":"waleedsadeh5@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLtDb6MX8CY1YNlGXRB365kJziTgRFkBo_atxM_AuDVwIHnuw=mo"},"finalizeTime":"2025-02-23T17:43:28.213237Z","finalizeUser":{"email":"waleedsadeh5@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLtDb6MX8CY1YNlGXRB365kJziTgRFkBo_atxM_AuDVwIHnuw=mo"}},"type":"DEPLOY","releaseTime":"2025-02-23T17:43:28.184Z","releaseUser":{"email":"waleedsadeh5@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLtDb6MX8CY1YNlGXRB365kJziTgRFkBo_atxM_AuDVwIHnuw=mo"}}
+[debug] [2025-02-23T17:43:30.190Z] [hosting] release: {"name":"projects/31107457498/sites/tradinglog-waleed/channels/live/releases/1740332608184000","version":{"name":"projects/31107457498/sites/tradinglog-waleed/versions/cc64ba6cd410552d","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-02-23T17:43:26.387229Z","createUser":{"email":"waleedsadeh5@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLtDb6MX8CY1YNlGXRB365kJziTgRFkBo_atxM_AuDVwIHnuw=mo"},"finalizeTime":"2025-02-23T17:43:28.213237Z","finalizeUser":{"email":"waleedsadeh5@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLtDb6MX8CY1YNlGXRB365kJziTgRFkBo_atxM_AuDVwIHnuw=mo"}},"type":"DEPLOY","releaseTime":"2025-02-23T17:43:28.184Z","releaseUser":{"email":"waleedsadeh5@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLtDb6MX8CY1YNlGXRB365kJziTgRFkBo_atxM_AuDVwIHnuw=mo"}}
+[info] +  hosting[tradinglog-waleed]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/tradinglog-waleed/overview
+[info] Hosting URL: https://tradinglog-waleed.web.app
