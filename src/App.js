@@ -5,6 +5,7 @@ import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup"
+
 function App() {
   return (
     <Router>
