@@ -1,6 +1,6 @@
 .Header {
     background-color: #191919;
-    height: 75pt;
+    height: 6.25rem;
     width: auto; /* Ensure it takes full width */
     display: flex;
     align-items: center;
@@ -10,46 +10,132 @@
 }
 
 .Header-logo {
-    width: 75pt;
-    height: 75pt;
+    width: 6.25rem;
+    height: 6.25rem;
+    margin-left: 6.25rem;
     object-fit: contain; /* Ensures the image scales properly */
-    margin-left: 10pt;
 }
 
-.Header-links {
-margin: 0 20pt 0 0;
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    margin-right: 2rem;
 }
 
-.Header-links ul {
+.menu-icon {
+    width: 2rem;
+    height: 2rem;
+    filter: invert(100%);
+}
+
+.menu {
+    margin: 0 6.25rem 0 0;
+}
+
+.menu ul {
     list-style: none;
     display: flex;
-    gap: 30pt; 
+    gap: 2.5rem; 
     margin: 0;
     padding: 0;
     align-items: center;
 }
 
-.Header-links a{
+.menu a {
     color: #f7f7f7;
-    font-size: 16pt;
-    cursor: pointer;
+    font-size: 1.25rem;
     font-weight: 500;
     text-decoration: none;
 }
 
-.Sign-up-button a{
+.Sign-up-button a {
     color: #101010;
     background-color: #80ff00;
-    padding: 8px 16px;
-    border-radius: 7pt;
-    margin-left: 5pt;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
 }
 
-.Header-links a:hover {
+.menu a:hover {
     color: #80ff00;
 }
 
 .Sign-up-button a:hover {
     background-color: #f7f7f7;
     color: #80ff00;
+}
+
+@media screen and (max-width: 1024px) {
+    .Header-logo {
+        margin-left: 2rem;
+    }
+    
+    .menu {
+        margin-right: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Header {
+        height: 5rem;
+    }
+
+    .Header-logo {
+        width: 5rem;
+        height: 5rem;
+        margin-left: 1rem;
+    }
+
+    .menu-button {
+        display: block;
+        z-index: 2;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: #191919;
+        margin: 0;
+        padding: 6rem 2rem 2rem 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu.active {
+        right: 0;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .Sign-up-button {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Header {
+        height: 4rem;
+    }
+
+    .Header-logo {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .menu {
+        width: 85%;
+    }
+
+    .menu a {
+        font-size: 1.1rem;
+    }
 }
