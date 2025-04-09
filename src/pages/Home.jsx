@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Header } from '../components';
+import { Header,Footer } from '../components';
 import "../styles/Home.css";
 import {efficient, security, newspaper} from '../assets'
 
@@ -69,7 +69,9 @@ function Home() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
+    
   );
 }
 

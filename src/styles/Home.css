@@ -32,7 +32,7 @@
     font-weight: 500;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border-radius: 0.75rem;
+    border-radius: 1rem;
     margin-right: 1rem; /* Add spacing between buttons */
 }
 
@@ -158,8 +158,11 @@
 
 .features {
     display: flex;
-    justify-content: space-between;
-    gap: 2rem;
+    justify-content: center; /* Center the feature cards */
+    gap: 2rem; /* Reduced gap between feature cards */
+    flex-wrap: wrap; /* Allow wrapping for larger screens */
+    max-width: 100%; /* Limit the maximum width of the container */
+    margin: 0 auto; /* Center the container */
 }
 
 .feature-card {
@@ -168,10 +171,8 @@
     padding: 2rem;
     flex: 1;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 500px; /* Limit the width of the cards */
 }
-
 
 .feature-card img {
     width: 3rem;
@@ -210,11 +211,6 @@
     padding: 2.5rem; /* Increase padding for a spacious look */
     border-radius: 1rem;
     text-align: center;
-    color: #101010;
-    font-family: 'Poppins', sans-serif; /* Use Poppins font */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: white; /* Ensure text is readable on gradients */
 }
 
 .stat-card h3 {
@@ -227,7 +223,7 @@
 .stat-card p {
     font-size: 1.2rem; /* Slightly larger font for descriptions */
     font-weight: 500;
-    color: #333; /* Darker text for readability */
+    color: #101010; /* Darker text for readability */
 }
 
 

@@ -1,0 +1,256 @@
+[debug] [2025-04-03T13:29:29.491Z] ----------------------------------------------------------------------
+[debug] [2025-04-03T13:29:29.494Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\walee\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2025-04-03T13:29:29.494Z] CLI Version:   14.1.0
+[debug] [2025-04-03T13:29:29.494Z] Platform:      win32
+[debug] [2025-04-03T13:29:29.494Z] Node Version:  v23.7.0
+[debug] [2025-04-03T13:29:29.495Z] Time:          Thu Apr 03 2025 14:29:29 GMT+0100 (British Summer Time)
+[debug] [2025-04-03T13:29:29.495Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-04-03T13:29:29.498Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-04-03T13:29:29.697Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-04-03T13:29:29.697Z] > authorizing via signed-in user (waleedsadeh5@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\walee\OneDrive\Desktop\tradinglog
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[debug] [2025-04-03T13:29:51.541Z] *** [apiv2] error from fetch(https://firebase-public.firebaseio.com/cli.json, {"headers":{},"method":"GET"}): FetchError: request to https://firebase-public.firebaseio.com/cli.json failed, reason: 
+[warn] !  Unable to fetch the CLI MOTD and remote config. This is not a fatal error, but may indicate an issue with your network connection. 
+[debug] [2025-04-03T13:29:51.542Z] Failed to fetch MOTD FirebaseError: Failed to make request to https://firebase-public.firebaseio.com/cli.json
+[debug] [2025-04-03T13:30:24.748Z] ----------------------------------------------------------------------
+[debug] [2025-04-03T13:30:24.751Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\walee\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-04-03T13:30:24.751Z] CLI Version:   14.1.0
+[debug] [2025-04-03T13:30:24.751Z] Platform:      win32
+[debug] [2025-04-03T13:30:24.752Z] Node Version:  v23.7.0
+[debug] [2025-04-03T13:30:24.752Z] Time:          Thu Apr 03 2025 14:30:24 GMT+0100 (British Summer Time)
+[debug] [2025-04-03T13:30:24.752Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-04-03T13:30:24.755Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-04-03T13:30:24.953Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-04-03T13:30:24.954Z] > authorizing via signed-in user (waleedsadeh5@gmail.com)
+[debug] [2025-04-03T13:30:24.954Z] [iam] checking project tradinglog-waleed for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-04-03T13:30:24.955Z] Checked if tokens are valid: false, expires at: 1740341110762
+[debug] [2025-04-03T13:30:24.955Z] Checked if tokens are valid: false, expires at: 1740341110762
+[debug] [2025-04-03T13:30:24.955Z] > refreshing access token with scopes: []
+[debug] [2025-04-03T13:30:24.956Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-04-03T13:30:24.956Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-04-03T13:30:25.298Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-04-03T13:30:25.298Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-04-03T13:30:25.311Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/tradinglog-waleed:testIamPermissions [none]
+[debug] [2025-04-03T13:30:25.311Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/tradinglog-waleed:testIamPermissions x-goog-quota-user=projects/tradinglog-waleed
+[debug] [2025-04-03T13:30:25.311Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/tradinglog-waleed:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-04-03T13:30:25.433Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-04-03T13:30:25.433Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-04-03T13:30:25.924Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/tradinglog-waleed:testIamPermissions 200
+[debug] [2025-04-03T13:30:25.924Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/tradinglog-waleed:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-04-03T13:30:25.925Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:25.925Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:25.926Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/tradinglog-waleed [none]
+[debug] [2025-04-03T13:30:27.630Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/tradinglog-waleed 200
+[debug] [2025-04-03T13:30:27.630Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/tradinglog-waleed {"projectId":"tradinglog-waleed","projectNumber":"31107457498","displayName":"tradinglog","name":"projects/tradinglog-waleed","resources":{"hostingSite":"tradinglog-waleed"},"state":"ACTIVE","etag":"1_0394d4ee-cbb0-495a-84ff-3c15969e879a"}
+[info] 
+[info] === Deploying to 'tradinglog-waleed'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-04-03T13:30:27.641Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:27.641Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:27.641Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/versions [none]
+[debug] [2025-04-03T13:30:27.641Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-04-03T13:30:30.798Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/versions 200
+[debug] [2025-04-03T13:30:30.798Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/versions {"name":"projects/31107457498/sites/tradinglog-waleed/versions/2181899d2e1ef1d2","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[tradinglog-waleed]: beginning deploy... 
+[info] i  hosting[tradinglog-waleed]: found 23 files in build 
+[debug] [2025-04-03T13:30:48.715Z] [hosting] uploading with 200 concurrency
+[debug] [2025-04-03T13:30:48.902Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:48.903Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:48.905Z] [hosting] hash cache [YnVpbGQ] stored for 23 files
+[debug] [2025-04-03T13:30:48.905Z] [hosting][hash queue][FINAL] {"max":169,"min":6,"avg":30.782608695652176,"active":0,"complete":23,"success":23,"errored":0,"retried":0,"total":23,"elapsed":180}
+[debug] [2025-04-03T13:30:48.905Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/31107457498/sites/tradinglog-waleed/versions/2181899d2e1ef1d2:populateFiles [none]
+[debug] [2025-04-03T13:30:48.905Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/31107457498/sites/tradinglog-waleed/versions/2181899d2e1ef1d2:populateFiles {"files":{"/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49\r","/manifest.json":"a0459d7c18e9598c799e2730e0a63a6d4e11c94a5a008265374a2c457e172d21\r","/favicon.ico":"778231da089192407ab5b3e698edbf97780d80ad4eb272232b0da55960d12e22\r","/index.html":"57456d1614e616d1d7547b63920d638a11efd5ffd7ea5b3036cf751bfb318b89","/asset-manifest.json":"4a902f650c8215a34764ed0b02c6345f95a898dfd00a2843ee8893ffb3d03f07","/static/media/tiktok.cfffe45922985a9b1713.png":"040313f5afd4c450ab95e1cc61a7c53270774b3b9a93e47456203dc83237b573","/static/media/graphfield2.3cab7daaf68732d21bfe.png":"dd5772e74ccf8f45ef3b80e27572d540d698ac2064a135e0cb8395f338e39132","/static/media/discord.5c29dae1923408fa8468.png":"3e5a461150dc303721c7c944ee6f567997007f809fd4709c4a057f5b229c7b29","/static/js/main.236b63e4.js.LICENSE.txt":"b66096bc0aff35730d07b1276c55f0fb447bf3b2fb7350efa7660b2a5145f6f1","/static/js/453.3c2b7816.chunk.js":"0413f549f9ab0ff3129c0b958a700252b856e4969eed34dd72e2e1163b4eb05d","/static/css/main.666ea5ad.css":"39f84f25b909b6cadf3d31e1131d85b8db2294d3d1214da6e40d2f0d83cef121","/static/css/main.666ea5ad.css.map":"f0199ad36e0651c93ae0d26641e5167941f22b669d9e01ca47fb42339a0c0c8d","/static/js/453.3c2b7816.chunk.js.map":"af7f49db5aa1bb6a201ee78944083a05353916a91649f03ccb97d84df7a79bf2","/logo192.png":"8a707b894abe1a0d725562f0e7974f5328dd034ec36ccf57421d61de727fe2e4","/static/media/twitter.78b81a11a5fa155216fc.png":"826cfd9cc32cd8299f115893d936d13caaad063695ffe2951d6b44591da24806","/static/media/newspaper.ddcadb81b225a37be6c0.png":"f72d3f82b4bf0ecf7a6ed539a787849cf81021f927932cebd636db3fd1a8f620","/static/media/instagram.40dfe2253471313ed63b.png":"efca4032d5ed29d7330ec3487d05770e30ccf6a3eaeab78e02e457d08fc15060","/static/media/security.a4e79bb66ce0841f1a64.png":"9c7e85598d6c47a2303692c39e1b0fd20fe77784ed4cc546dfb970376835d633","/logo512.png":"38173715f1e6ade09de776a4b2ed17e9ef0b588d036c46564b4fc9da1b4340f6","/static/media/efficient.8af3b3fff09857a8215a.png":"a770dd47439b33ad7d3ddb2f301c29773e0e262a85b83f4cef7fbf46e3c0c933","/static/media/logo.63cf80a267dd4fd75a4b.png":"5ba6a54b21743e98a7de4abe15c00ead018535c42fe8ede28154ad65371f5993","/static/js/main.236b63e4.js":"9f17ca97f6b93dba14fb2e1f723391acf90c11cd8e614207595b662d86f9cd83","/static/js/main.236b63e4.js.map":"ce3b96d0710291d46cc690c25c4fc0a0a534154698bb125e2828aea2c2cf0793"}}
+[debug] [2025-04-03T13:30:50.243Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/31107457498/sites/tradinglog-waleed/versions/2181899d2e1ef1d2:populateFiles 200
+[debug] [2025-04-03T13:30:50.244Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/31107457498/sites/tradinglog-waleed/versions/2181899d2e1ef1d2:populateFiles {"uploadRequiredHashes":["8a707b894abe1a0d725562f0e7974f5328dd034ec36ccf57421d61de727fe2e4","a770dd47439b33ad7d3ddb2f301c29773e0e262a85b83f4cef7fbf46e3c0c933","efca4032d5ed29d7330ec3487d05770e30ccf6a3eaeab78e02e457d08fc15060","4a902f650c8215a34764ed0b02c6345f95a898dfd00a2843ee8893ffb3d03f07","39f84f25b909b6cadf3d31e1131d85b8db2294d3d1214da6e40d2f0d83cef121","3e5a461150dc303721c7c944ee6f567997007f809fd4709c4a057f5b229c7b29","f72d3f82b4bf0ecf7a6ed539a787849cf81021f927932cebd636db3fd1a8f620","9c7e85598d6c47a2303692c39e1b0fd20fe77784ed4cc546dfb970376835d633","826cfd9cc32cd8299f115893d936d13caaad063695ffe2951d6b44591da24806","5ba6a54b21743e98a7de4abe15c00ead018535c42fe8ede28154ad65371f5993","040313f5afd4c450ab95e1cc61a7c53270774b3b9a93e47456203dc83237b573","dd5772e74ccf8f45ef3b80e27572d540d698ac2064a135e0cb8395f338e39132","38173715f1e6ade09de776a4b2ed17e9ef0b588d036c46564b4fc9da1b4340f6","f0199ad36e0651c93ae0d26641e5167941f22b669d9e01ca47fb42339a0c0c8d","ce3b96d0710291d46cc690c25c4fc0a0a534154698bb125e2828aea2c2cf0793","9f17ca97f6b93dba14fb2e1f723391acf90c11cd8e614207595b662d86f9cd83","57456d1614e616d1d7547b63920d638a11efd5ffd7ea5b3036cf751bfb318b89"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files"}
+[debug] [2025-04-03T13:30:50.245Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.245Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.245Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.245Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.245Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.246Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.246Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.246Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.246Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.246Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.246Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.246Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.246Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.247Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.247Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.247Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.248Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.248Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.248Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.248Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.248Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.249Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.249Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.249Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.250Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.250Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.250Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.250Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.250Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.251Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.251Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.251Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.251Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.251Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:50.251Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/8a707b894abe1a0d725562f0e7974f5328dd034ec36ccf57421d61de727fe2e4 [none]
+[debug] [2025-04-03T13:30:50.251Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/8a707b894abe1a0d725562f0e7974f5328dd034ec36ccf57421d61de727fe2e4 [stream]
+[debug] [2025-04-03T13:30:50.253Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/a770dd47439b33ad7d3ddb2f301c29773e0e262a85b83f4cef7fbf46e3c0c933 [none]
+[debug] [2025-04-03T13:30:50.254Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/a770dd47439b33ad7d3ddb2f301c29773e0e262a85b83f4cef7fbf46e3c0c933 [stream]
+[debug] [2025-04-03T13:30:50.256Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/efca4032d5ed29d7330ec3487d05770e30ccf6a3eaeab78e02e457d08fc15060 [none]
+[debug] [2025-04-03T13:30:50.257Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/efca4032d5ed29d7330ec3487d05770e30ccf6a3eaeab78e02e457d08fc15060 [stream]
+[debug] [2025-04-03T13:30:50.258Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/4a902f650c8215a34764ed0b02c6345f95a898dfd00a2843ee8893ffb3d03f07 [none]
+[debug] [2025-04-03T13:30:50.259Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/4a902f650c8215a34764ed0b02c6345f95a898dfd00a2843ee8893ffb3d03f07 [stream]
+[debug] [2025-04-03T13:30:50.260Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/39f84f25b909b6cadf3d31e1131d85b8db2294d3d1214da6e40d2f0d83cef121 [none]
+[debug] [2025-04-03T13:30:50.260Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/39f84f25b909b6cadf3d31e1131d85b8db2294d3d1214da6e40d2f0d83cef121 [stream]
+[debug] [2025-04-03T13:30:50.262Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/3e5a461150dc303721c7c944ee6f567997007f809fd4709c4a057f5b229c7b29 [none]
+[debug] [2025-04-03T13:30:50.262Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/3e5a461150dc303721c7c944ee6f567997007f809fd4709c4a057f5b229c7b29 [stream]
+[debug] [2025-04-03T13:30:50.264Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/f72d3f82b4bf0ecf7a6ed539a787849cf81021f927932cebd636db3fd1a8f620 [none]
+[debug] [2025-04-03T13:30:50.264Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/f72d3f82b4bf0ecf7a6ed539a787849cf81021f927932cebd636db3fd1a8f620 [stream]
+[debug] [2025-04-03T13:30:50.265Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/9c7e85598d6c47a2303692c39e1b0fd20fe77784ed4cc546dfb970376835d633 [none]
+[debug] [2025-04-03T13:30:50.266Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/9c7e85598d6c47a2303692c39e1b0fd20fe77784ed4cc546dfb970376835d633 [stream]
+[debug] [2025-04-03T13:30:50.267Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/826cfd9cc32cd8299f115893d936d13caaad063695ffe2951d6b44591da24806 [none]
+[debug] [2025-04-03T13:30:50.267Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/826cfd9cc32cd8299f115893d936d13caaad063695ffe2951d6b44591da24806 [stream]
+[debug] [2025-04-03T13:30:50.269Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/5ba6a54b21743e98a7de4abe15c00ead018535c42fe8ede28154ad65371f5993 [none]
+[debug] [2025-04-03T13:30:50.269Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/5ba6a54b21743e98a7de4abe15c00ead018535c42fe8ede28154ad65371f5993 [stream]
+[debug] [2025-04-03T13:30:50.272Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/040313f5afd4c450ab95e1cc61a7c53270774b3b9a93e47456203dc83237b573 [none]
+[debug] [2025-04-03T13:30:50.272Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/040313f5afd4c450ab95e1cc61a7c53270774b3b9a93e47456203dc83237b573 [stream]
+[debug] [2025-04-03T13:30:50.273Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/dd5772e74ccf8f45ef3b80e27572d540d698ac2064a135e0cb8395f338e39132 [none]
+[debug] [2025-04-03T13:30:50.273Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/dd5772e74ccf8f45ef3b80e27572d540d698ac2064a135e0cb8395f338e39132 [stream]
+[debug] [2025-04-03T13:30:50.274Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/38173715f1e6ade09de776a4b2ed17e9ef0b588d036c46564b4fc9da1b4340f6 [none]
+[debug] [2025-04-03T13:30:50.274Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/38173715f1e6ade09de776a4b2ed17e9ef0b588d036c46564b4fc9da1b4340f6 [stream]
+[debug] [2025-04-03T13:30:50.275Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/f0199ad36e0651c93ae0d26641e5167941f22b669d9e01ca47fb42339a0c0c8d [none]
+[debug] [2025-04-03T13:30:50.275Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/f0199ad36e0651c93ae0d26641e5167941f22b669d9e01ca47fb42339a0c0c8d [stream]
+[debug] [2025-04-03T13:30:50.276Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/ce3b96d0710291d46cc690c25c4fc0a0a534154698bb125e2828aea2c2cf0793 [none]
+[debug] [2025-04-03T13:30:50.276Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/ce3b96d0710291d46cc690c25c4fc0a0a534154698bb125e2828aea2c2cf0793 [stream]
+[debug] [2025-04-03T13:30:50.276Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/9f17ca97f6b93dba14fb2e1f723391acf90c11cd8e614207595b662d86f9cd83 [none]
+[debug] [2025-04-03T13:30:50.276Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/9f17ca97f6b93dba14fb2e1f723391acf90c11cd8e614207595b662d86f9cd83 [stream]
+[debug] [2025-04-03T13:30:50.277Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/57456d1614e616d1d7547b63920d638a11efd5ffd7ea5b3036cf751bfb318b89 [none]
+[debug] [2025-04-03T13:30:50.277Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/57456d1614e616d1d7547b63920d638a11efd5ffd7ea5b3036cf751bfb318b89 [stream]
+[debug] [2025-04-03T13:30:50.278Z] [hosting][populate queue][FINAL] {"max":1350,"min":1350,"avg":1350,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1377}
+[debug] [2025-04-03T13:30:50.278Z] [hosting] uploads queued: 17
+[debug] [2025-04-03T13:30:52.242Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/8a707b894abe1a0d725562f0e7974f5328dd034ec36ccf57421d61de727fe2e4 200
+[debug] [2025-04-03T13:30:52.242Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/8a707b894abe1a0d725562f0e7974f5328dd034ec36ccf57421d61de727fe2e4 [stream]
+[debug] [2025-04-03T13:30:52.244Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/f72d3f82b4bf0ecf7a6ed539a787849cf81021f927932cebd636db3fd1a8f620 200
+[debug] [2025-04-03T13:30:52.245Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/f72d3f82b4bf0ecf7a6ed539a787849cf81021f927932cebd636db3fd1a8f620 [stream]
+[debug] [2025-04-03T13:30:52.281Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/3e5a461150dc303721c7c944ee6f567997007f809fd4709c4a057f5b229c7b29 200
+[debug] [2025-04-03T13:30:52.281Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/3e5a461150dc303721c7c944ee6f567997007f809fd4709c4a057f5b229c7b29 [stream]
+[debug] [2025-04-03T13:30:52.282Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/dd5772e74ccf8f45ef3b80e27572d540d698ac2064a135e0cb8395f338e39132 200
+[debug] [2025-04-03T13:30:52.282Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/dd5772e74ccf8f45ef3b80e27572d540d698ac2064a135e0cb8395f338e39132 [stream]
+[debug] [2025-04-03T13:30:52.298Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/f0199ad36e0651c93ae0d26641e5167941f22b669d9e01ca47fb42339a0c0c8d 200
+[debug] [2025-04-03T13:30:52.298Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/f0199ad36e0651c93ae0d26641e5167941f22b669d9e01ca47fb42339a0c0c8d [stream]
+[debug] [2025-04-03T13:30:52.314Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/38173715f1e6ade09de776a4b2ed17e9ef0b588d036c46564b4fc9da1b4340f6 200
+[debug] [2025-04-03T13:30:52.314Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/38173715f1e6ade09de776a4b2ed17e9ef0b588d036c46564b4fc9da1b4340f6 [stream]
+[debug] [2025-04-03T13:30:52.315Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/efca4032d5ed29d7330ec3487d05770e30ccf6a3eaeab78e02e457d08fc15060 200
+[debug] [2025-04-03T13:30:52.316Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/efca4032d5ed29d7330ec3487d05770e30ccf6a3eaeab78e02e457d08fc15060 [stream]
+[debug] [2025-04-03T13:30:52.323Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/39f84f25b909b6cadf3d31e1131d85b8db2294d3d1214da6e40d2f0d83cef121 200
+[debug] [2025-04-03T13:30:52.323Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/39f84f25b909b6cadf3d31e1131d85b8db2294d3d1214da6e40d2f0d83cef121 [stream]
+[debug] [2025-04-03T13:30:52.364Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/ce3b96d0710291d46cc690c25c4fc0a0a534154698bb125e2828aea2c2cf0793 200
+[debug] [2025-04-03T13:30:52.365Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/ce3b96d0710291d46cc690c25c4fc0a0a534154698bb125e2828aea2c2cf0793 [stream]
+[debug] [2025-04-03T13:30:52.376Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/9f17ca97f6b93dba14fb2e1f723391acf90c11cd8e614207595b662d86f9cd83 200
+[debug] [2025-04-03T13:30:52.377Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/9f17ca97f6b93dba14fb2e1f723391acf90c11cd8e614207595b662d86f9cd83 [stream]
+[debug] [2025-04-03T13:30:52.408Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/4a902f650c8215a34764ed0b02c6345f95a898dfd00a2843ee8893ffb3d03f07 200
+[debug] [2025-04-03T13:30:52.408Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/4a902f650c8215a34764ed0b02c6345f95a898dfd00a2843ee8893ffb3d03f07 [stream]
+[debug] [2025-04-03T13:30:52.447Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/57456d1614e616d1d7547b63920d638a11efd5ffd7ea5b3036cf751bfb318b89 200
+[debug] [2025-04-03T13:30:52.447Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/57456d1614e616d1d7547b63920d638a11efd5ffd7ea5b3036cf751bfb318b89 [stream]
+[debug] [2025-04-03T13:30:52.456Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/826cfd9cc32cd8299f115893d936d13caaad063695ffe2951d6b44591da24806 200
+[debug] [2025-04-03T13:30:52.456Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/826cfd9cc32cd8299f115893d936d13caaad063695ffe2951d6b44591da24806 [stream]
+[debug] [2025-04-03T13:30:52.482Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/a770dd47439b33ad7d3ddb2f301c29773e0e262a85b83f4cef7fbf46e3c0c933 200
+[debug] [2025-04-03T13:30:52.482Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/a770dd47439b33ad7d3ddb2f301c29773e0e262a85b83f4cef7fbf46e3c0c933 [stream]
+[debug] [2025-04-03T13:30:52.595Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/5ba6a54b21743e98a7de4abe15c00ead018535c42fe8ede28154ad65371f5993 200
+[debug] [2025-04-03T13:30:52.596Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/5ba6a54b21743e98a7de4abe15c00ead018535c42fe8ede28154ad65371f5993 [stream]
+[debug] [2025-04-03T13:30:52.608Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/9c7e85598d6c47a2303692c39e1b0fd20fe77784ed4cc546dfb970376835d633 200
+[debug] [2025-04-03T13:30:52.608Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/9c7e85598d6c47a2303692c39e1b0fd20fe77784ed4cc546dfb970376835d633 [stream]
+[debug] [2025-04-03T13:30:52.713Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/040313f5afd4c450ab95e1cc61a7c53270774b3b9a93e47456203dc83237b573 200
+[debug] [2025-04-03T13:30:52.713Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/tradinglog-waleed/versions/2181899d2e1ef1d2/files/040313f5afd4c450ab95e1cc61a7c53270774b3b9a93e47456203dc83237b573 [stream]
+[debug] [2025-04-03T13:30:52.713Z] [hosting][upload queue][FINAL] {"max":2465,"min":1998,"avg":2149.8823529411766,"active":0,"complete":17,"success":17,"errored":0,"retried":0,"total":17,"elapsed":2469}
+[info] +  hosting[tradinglog-waleed]: file upload complete 
+[debug] [2025-04-03T13:30:52.715Z] [hosting] deploy completed after 4029ms
+[debug] [2025-04-03T13:30:52.716Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "headers": [
+        {
+          "source": "/index.html",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "site": "tradinglog-waleed"
+    },
+    "version": "projects/31107457498/sites/tradinglog-waleed/versions/2181899d2e1ef1d2"
+  }
+]
+[info] i  hosting[tradinglog-waleed]: finalizing version... 
+[debug] [2025-04-03T13:30:52.719Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:52.719Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:52.720Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/versions/2181899d2e1ef1d2 updateMask=status%2Cconfig
+[debug] [2025-04-03T13:30:52.720Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/versions/2181899d2e1ef1d2 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}],"headers":[{"glob":"/index.html","headers":{"Cache-Control":"no-cache, no-store, must-revalidate","Pragma":"no-cache","Expires":"0"}}]}}
+[debug] [2025-04-03T13:30:52.924Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/versions/2181899d2e1ef1d2 200
+[debug] [2025-04-03T13:30:52.924Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/versions/2181899d2e1ef1d2 {"name":"projects/31107457498/sites/tradinglog-waleed/versions/2181899d2e1ef1d2","status":"FINALIZED","config":{"headers":[{"headers":{"Cache-Control":"no-cache, no-store, must-revalidate","Pragma":"no-cache","Expires":"0"},"glob":"/index.html"}],"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-04-03T13:30:28.448132Z","createUser":{"email":"waleedsadeh5@gmail.com"},"finalizeTime":"2025-04-03T13:30:51.313362Z","finalizeUser":{"email":"waleedsadeh5@gmail.com"}}
+[debug] [2025-04-03T13:30:52.924Z] [hosting] finalized version for tradinglog-waleed:[object Object]
+[info] +  hosting[tradinglog-waleed]: version finalized 
+[info] i  hosting[tradinglog-waleed]: releasing new version... 
+[debug] [2025-04-03T13:30:52.926Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:52.926Z] Checked if tokens are valid: true, expires at: 1743690624298
+[debug] [2025-04-03T13:30:52.926Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/channels/live/releases versionName=projects%2F31107457498%2Fsites%2Ftradinglog-waleed%2Fversions%2F2181899d2e1ef1d2
+[debug] [2025-04-03T13:30:52.926Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/channels/live/releases {}
+[debug] [2025-04-03T13:30:53.161Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/channels/live/releases 200
+[debug] [2025-04-03T13:30:53.161Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tradinglog-waleed/channels/live/releases {"name":"projects/31107457498/sites/tradinglog-waleed/channels/live/releases/1743687050994000","version":{"name":"projects/31107457498/sites/tradinglog-waleed/versions/2181899d2e1ef1d2","status":"FINALIZED","config":{"headers":[{"headers":{"Expires":"0","Cache-Control":"no-cache, no-store, must-revalidate","Pragma":"no-cache"},"glob":"/index.html"}],"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-04-03T13:30:28.448132Z","createUser":{"email":"waleedsadeh5@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLtDb6MX8CY1YNlGXRB365kJziTgRFkBo_atxM_AuDVwIHnuw=mo"},"finalizeTime":"2025-04-03T13:30:51.313362Z","finalizeUser":{"email":"waleedsadeh5@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLtDb6MX8CY1YNlGXRB365kJziTgRFkBo_atxM_AuDVwIHnuw=mo"}},"type":"DEPLOY","releaseTime":"2025-04-03T13:30:50.994Z","releaseUser":{"email":"waleedsadeh5@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLtDb6MX8CY1YNlGXRB365kJziTgRFkBo_atxM_AuDVwIHnuw=mo"}}
+[debug] [2025-04-03T13:30:53.161Z] [hosting] release: {"name":"projects/31107457498/sites/tradinglog-waleed/channels/live/releases/1743687050994000","version":{"name":"projects/31107457498/sites/tradinglog-waleed/versions/2181899d2e1ef1d2","status":"FINALIZED","config":{"headers":[{"headers":{"Expires":"0","Cache-Control":"no-cache, no-store, must-revalidate","Pragma":"no-cache"},"glob":"/index.html"}],"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-04-03T13:30:28.448132Z","createUser":{"email":"waleedsadeh5@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLtDb6MX8CY1YNlGXRB365kJziTgRFkBo_atxM_AuDVwIHnuw=mo"},"finalizeTime":"2025-04-03T13:30:51.313362Z","finalizeUser":{"email":"waleedsadeh5@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLtDb6MX8CY1YNlGXRB365kJziTgRFkBo_atxM_AuDVwIHnuw=mo"}},"type":"DEPLOY","releaseTime":"2025-04-03T13:30:50.994Z","releaseUser":{"email":"waleedsadeh5@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLtDb6MX8CY1YNlGXRB365kJziTgRFkBo_atxM_AuDVwIHnuw=mo"}}
+[info] +  hosting[tradinglog-waleed]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/tradinglog-waleed/overview
+[info] Hosting URL: https://tradinglog-waleed.web.app
+[debug] [2025-04-03T13:31:24.218Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\walee\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:269:49)
+    at listOnTimeout (node:internal/timers:614:17)
+    at process.processTimers (node:internal/timers:549:7)
+[error] 
+[error] Error: An unexpected error has occurred.

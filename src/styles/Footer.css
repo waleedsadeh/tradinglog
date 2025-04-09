@@ -1,0 +1,110 @@
+.Footer {
+    display: flex;
+    background-color: #191919;
+    width: 100%; /* Ensure it takes full width */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    height: 6.25rem;
+}
+
+.Footer-left {
+    display: flex;
+    align-items: center;
+    margin-left: 6.25rem;
+}
+
+.Footer-logo {
+    width: 70px;
+    height: 70px;
+}
+
+.Footer-links {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    margin-left: 2rem;
+}
+
+.Footer-links a {
+    color: #f7f7f7;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.Footer-center {
+    text-align: center;
+    align-items: center;
+}
+
+.Footer-icons {
+    margin: 10px 0;
+}
+
+.Footer-icons img {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.Footer-icons img:hover {
+    opacity: 0.8;
+}
+
+.Footer-right {
+    text-align: right;
+    margin-right: 6.25rem;
+    font-size: 1rem;
+    color: #f7f7f7;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .Footer {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .Footer-left {
+        margin-left: 0;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .Footer-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .Footer-center {
+        margin-bottom: 10px;
+    }
+
+    .Footer-right {
+        margin-right: 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Footer-icons img {
+        width: 20px;
+        height: 20px;
+        margin: 0 5px;
+    }
+
+    .Footer-links a {
+        font-size: 0.9rem;
+    }
+
+    .Footer-right {
+        font-size: 0.8rem;
+    }
+}
