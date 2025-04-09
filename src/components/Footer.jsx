@@ -8,7 +8,9 @@ function Footer() {
     return (
         <div className="Footer">
             <div className="Footer-left">
-                <img src={logo} alt="Logo" className="Footer-logo" />
+                <NavLink to="/">
+                    <img src={logo} alt="Logo" className="Footer-logo" />
+                </NavLink>
                 <div className="Footer-links">
                     <NavLink to="/cookies">Cookies</NavLink>
                     <NavLink to="/terms-of-service">Terms of Service</NavLink>
