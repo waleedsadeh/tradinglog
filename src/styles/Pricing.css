@@ -30,22 +30,21 @@
     justify-content: center;
     gap: 6.25rem;
     padding: 2rem;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
 }
 
-.pricing-card-free{
+.pricing-card-free, .pricing-card-pro {
     background-color: #101010;
     border-radius: 1rem;
     border: 2px solid #f7f7f7;
     width: 400px;
     text-align: center;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .pricing-card-pro {
     background-color: #f7f7f7;
-    border-radius: 1rem;
-    border: 2px solid #f7f7f7;
-    width: 400px;
-    text-align: center;
 }
 
 .pricing-card-free h2 {
@@ -58,111 +57,129 @@
     font-size: 2rem;
 }
 
-.pricing-card-free h3 {
-    color: #f7f7f7;
+.pricing-card-free h3, .pricing-card-pro h3 {
     font-size: 4rem;
     margin: 0rem;
 }
 
+.pricing-card-free h3 {
+    color: #f7f7f7;
+}
+
 .pricing-card-pro h3 {
     color: #101010;
-    font-size: 4rem;
-    margin: 0rem
+}
+
+.pricing-card-free p, .pricing-card-pro p {
+    font-size: 1rem;
 }
 
 .pricing-card-free p {
     color: #f7f7f7;
-    font-size: 1rem;
 }
 
 .pricing-card-pro p {
     color: #101010;
-    font-size: 1rem;
 }
-.pricing-button {
+
+.pricing-button, .premium-button {
     display: inline-block;
     margin-block: 1rem;
     padding: 0.5rem 1rem;
-    background-color: #f7f7f7;
-    color: #101010;
     text-decoration: none;
     font-weight: bold;
     border-radius: 0.5rem;
     font-size: 1.25rem;
+}
+
+.pricing-button {
+    background-color: #f7f7f7;
+    color: #101010;
 }
 
 .premium-button {
-    display: inline-block;
-    margin-block: 1rem;
-    padding: 0.5rem 1rem;
     background-color: #80FF00;
     color: #101010;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 0.5rem;
-    font-size: 1.25rem;
+}
 
+.pricing-card-free-features h4, .pricing-card-pro-features h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
 }
 
 .pricing-card-free-features h4 {
     color: #f7f7f7;
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
 }
+
 .pricing-card-pro-features h4 {
     color: #101010;
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
-.pricing-card-free-features p {
-    color: #f7f7f7;
-    font-size: 1rem;
 }
 
-.pricing-card-pro-features p {
-    color: #101010;
-    font-size: 1rem;
-}
-
-.pricing-card-free-features ul {
+.pricing-card-free-features ul, .pricing-card-pro-features ul {
     list-style: none;
     padding: 0 0 0.5rem 0;
     margin: 0;
-
 }
-.pricing-card-pro-features ul {
-    list-style: none;
-    padding: 0 0 0.5rem 0;
-    margin: 0;
+
+.pricing-card-free-features li, .pricing-card-pro-features li {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
 }
 
 .pricing-card-free-features li {
     color: #f7f7f7;
-    font-size: 1rem;
-    margin: 0.5rem 0;
-    display: flex;
-    align-items: center;
-    margin-left: 1rem;
 }
 
 .pricing-card-pro-features li {
     color: #101010;
-    font-size: 1rem;
-    margin: 0.5rem 0;
-    display: flex;
-    align-items: center;
-    margin-left: 1rem;
 }
 
-.pricing-card-free-features li img {
+.pricing-card-free-features li img, .pricing-card-pro-features li img {
     width: 20px;
     height: 20px;
     margin-right: 0.5rem;
 }
 
-.pricing-card-pro-features li img {
-    width: 20px;
-    height: 20px;
-    margin-right: 0.5rem;
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .pricing-card-free, .pricing-card-pro {
+        width: 90%; /* Adjust card width for smaller screens */
+    }
+
+    .pricing-header h1 {
+        font-size: 3rem;
+    }
+
+    .pricing-header p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .pricing-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .pricing-header p {
+        font-size: 0.9rem;
+    }
+
+    .pricing-card-free h3, .pricing-card-pro h3 {
+        font-size: 3rem;
+    }
+
+    .pricing-button, .premium-button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
 }
 
