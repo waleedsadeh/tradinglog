@@ -148,38 +148,53 @@
     .pricing-cards {
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        gap: 1.5rem; /* Reduce gap between cards */
     }
 
     .pricing-card-free, .pricing-card-pro {
         width: 90%; /* Adjust card width for smaller screens */
+        padding: 1rem; /* Reduce padding */
     }
 
     .pricing-header h1 {
-        font-size: 3rem;
+        font-size: 3rem; /* Reduce heading size */
     }
 
     .pricing-header p {
-        font-size: 1rem;
+        font-size: 1rem; /* Reduce paragraph size */
+    }
+
+    .pricing-card-free h3, .pricing-card-pro h3 {
+        font-size: 3rem; /* Reduce price font size */
+    }
+
+    .pricing-button, .premium-button {
+        font-size: 1rem; /* Reduce button font size */
+        padding: 0.5rem 0.75rem; /* Adjust button padding */
     }
 }
 
 @media screen and (max-width: 480px) {
     .pricing-header h1 {
-        font-size: 2.5rem;
+        font-size: 2.5rem; /* Further reduce heading size */
     }
 
     .pricing-header p {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Further reduce paragraph size */
     }
 
     .pricing-card-free h3, .pricing-card-pro h3 {
-        font-size: 3rem;
+        font-size: 2.5rem; /* Further reduce price font size */
+    }
+
+    .pricing-card-free, .pricing-card-pro {
+        width: 95%; /* Make cards almost full width */
+        padding: 0.75rem; /* Reduce padding further */
     }
 
     .pricing-button, .premium-button {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
+        font-size: 0.9rem; /* Further reduce button font size */
+        padding: 0.4rem 0.6rem; /* Adjust button padding */
     }
 }
 
