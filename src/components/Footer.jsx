@@ -1,8 +1,7 @@
 import React from "react";
 import "../styles/Footer.css";
 import { NavLink } from "react-router-dom";
-import { tiktok, twitter, instagram, discord } from "../assets";
-import logo from "../logo.png";
+import { tiktok, twitter, instagram, discord, logo } from "../assets";
 
 function Footer() {
     return (

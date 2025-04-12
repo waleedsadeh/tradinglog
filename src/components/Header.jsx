@@ -1,8 +1,7 @@
 import '../styles/Header.css';
-import logo from '../logo.png';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import {menu} from '../assets';
+import {menu, logo} from '../assets';
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 

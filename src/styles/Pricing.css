@@ -16,6 +16,7 @@
     color: #f7f7f7;
     font-size: 4rem;
     text-align: center;
+    margin-block-end: 0rem;
 }
 
 .pricing-header p {

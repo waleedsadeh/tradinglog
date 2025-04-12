@@ -55,7 +55,7 @@
     color: #101010;
     background-color: #80ff00;
     padding: 0.5rem 1rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 .menu a:hover {

@@ -8,6 +8,9 @@ import discord from './discord.png';
 import twitter from './twitter.png';
 import tiktok from './tiktok.png';
 import tick from './tick.png';
+import google from './google.png';
+import github from './github.png';
+import logo from './logo.png';
 
 export {
     graphfield2,
@@ -19,5 +22,8 @@ export {
     discord,
     twitter,
     tiktok,
-    tick
+    tick,
+    google,
+    github,
+    logo
 }
