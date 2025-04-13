@@ -21,7 +21,9 @@ function Footer() {
                     <img src={tiktok} alt="TikTok" />
                     <img src={twitter} alt="Twitter" />
                     <img src={instagram} alt="Instagram" />
-                    <img src={discord} alt="Discord" />
+                    <a href="https://discord.gg/rmJ7KV3t" target="_blank" rel="noopener noreferrer">
+                        <img src={discord} alt="Discord" />
+                    </a>
                 </div>
             </div>
             <div className="Footer-right">

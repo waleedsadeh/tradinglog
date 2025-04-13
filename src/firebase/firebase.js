@@ -1,7 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
+import { 
+  getAuth, 
+  createUserWithEmailAndPassword, 
+  signInWithPopup, 
+  signInWithEmailAndPassword,
+  GoogleAuthProvider, 
+  GithubAuthProvider } from "firebase/auth";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 
 // Your web app's Firebase configuration
@@ -42,6 +48,15 @@ const signUpWithEmail = async (email, password, firstName, lastName, phoneNumber
   }
 };
 
+const signInWithEmail = async (email, password) => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+    return user; // Return the signed-in user
+  } catch (error) {
+    throw error; // Throw the error to handle it in the component
+  }
+};
 // Function to sign up or log in with Google
 const signUpWithGoogle = async () => {
   const provider = new GoogleAuthProvider();
@@ -94,5 +109,10 @@ const signUpWithGitHub = async () => {
   }
 };
 
-export { app, analytics, auth, db, signUpWithEmail, signUpWithGoogle, signUpWithGitHub };
+export { app, analytics, auth, db, 
+  signUpWithEmail, 
+  signUpWithGoogle,
+  signUpWithGitHub,
+  signInWithEmail
+ };
 

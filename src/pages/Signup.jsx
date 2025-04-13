@@ -79,7 +79,9 @@ function Signup() {
             </button>
           </div>
         </div>
+
         <p className="or-divider">OR</p>
+        
         <form onSubmit={handleSignup} className="signup-form">
           <div className="form-group">
             <div className="form-row">
@@ -141,6 +143,7 @@ function Signup() {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
+                <span className="password-input-hint">Password with least 10 characters</span>
               </div>
               <div className="input-container">
                 <label htmlFor="confirmPassword">Confirm Password</label>
@@ -152,8 +155,9 @@ function Signup() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
                 />
+                <span className="password-input-hint">Re-enter your password</span>
               </div>
-            </div>
+            </div>  
           </div>
           <button type="submit" className="signup-button">
             Sign Up

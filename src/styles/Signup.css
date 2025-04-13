@@ -55,7 +55,7 @@
     text-align: center;
     gap: 1rem;
     padding: 0.75rem 1.5rem;
-    border: 2px solid #f7f7f7;
+    border: none;
     border-radius: 0.5rem;
     background-color: #191919;
     cursor: pointer;
@@ -114,6 +114,13 @@
     width: 100%;
     box-sizing: border-box;
     min-width: 200px;
+}
+
+.password-input-hint {
+    color: #888888;
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
 }
 
 .form-row label {
