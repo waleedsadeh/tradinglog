@@ -126,7 +126,7 @@
     background-color: #101010;
     border: none;
     border-radius: 0.5rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
     margin-bottom: 0.5rem;
 }
 
@@ -136,4 +136,38 @@
     margin-block-start: 0rem;
     margin-block-end: 0rem;
     margin-top: 0.25rem;
+}
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: row;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    .contact-form-container,
+    .contact-discord-container {
+        flex: 1; /* Equal width for both containers */
+        width: 50%;
+    }
+
+}
+
+/* Mobile layout - stack containers vertically */
+@media screen and (max-width: 480px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+        margin: 2rem;
+    }
+    
+    .contact-form-container,
+    .contact-discord-container {
+        width: auto;
+        
+    }
+    
+    /* Optional: Add some spacing between stacked containers */
+    .contact-form-container {
+        margin-bottom: 2rem;
+    }
 }
