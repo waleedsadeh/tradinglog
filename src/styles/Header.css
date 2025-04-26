@@ -148,10 +148,12 @@
     }
 
     .Header-logo {
-        width: 4rem;
-        height: 4rem;
-    }
+        width: 3rem;
+        height: 3rem;
+        padding: 0rem 0rem 0rem 2rem;
 
+    }
+    
     .menu {
         width: 85%;
     }
@@ -163,4 +165,5 @@
     .logout-button {
         font-size: 1.1rem;
     }
+    
 }

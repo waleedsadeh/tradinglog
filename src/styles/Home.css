@@ -240,10 +240,47 @@
     }
 
     .stat-card h3 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .stat-card p {
         font-size: 1rem;
     }
+}
+
+@media screen and (max-width: 480px) {    
+    .field1 {
+        margin: 2rem 2rem 0 2rem; /* Minimal margins for very small screens */
+    }
+
+    .field1-left h1 {
+        font-size: 2rem; /* Smaller heading size for mobile */
+    }
+
+    .field1-left p {
+        font-size: 1rem; /* Smaller paragraph font size */
+    }
+
+    .button-container {
+        margin-top: 2rem;
+    }
+    
+    .button-container a {
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.5rem;
+    }
+    
+
+    .field2 {
+        padding: 2rem;
+    }
+
+    .field3 {
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+
 }
