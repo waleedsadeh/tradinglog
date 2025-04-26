@@ -176,6 +176,13 @@
 }
 
 @media screen and (max-width: 480px) {
+    .pricing-container {
+        margin-top: 2rem; /* Reduce top margin for smaller screens */
+        margin-bottom: 2rem; /* Reduce bottom margin for smaller screens */
+    }
+    .pricing-header {
+        padding: 0 2rem; /* Add padding for small screens */
+    }
     .pricing-header h1 {
         font-size: 2.5rem; /* Further reduce heading size */
     }
@@ -183,19 +190,22 @@
     .pricing-header p {
         font-size: 0.9rem; /* Further reduce paragraph size */
     }
-
+    .pricing-cards {
+        padding-inline: 2rem; 
+        
+    }
+    
     .pricing-card-free h3, .pricing-card-pro h3 {
         font-size: 2.5rem; /* Further reduce price font size */
     }
 
     .pricing-card-free, .pricing-card-pro {
-        width: 95%; /* Make cards almost full width */
         padding: 0.75rem; /* Reduce padding further */
     }
 
     .pricing-button, .premium-button {
         font-size: 0.9rem; /* Further reduce button font size */
-        padding: 0.4rem 0.6rem; /* Adjust button padding */
+        padding: 0.5rem 1rem;
     }
 }
 
