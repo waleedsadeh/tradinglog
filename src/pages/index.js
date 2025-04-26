@@ -6,3 +6,5 @@ export {default as Contact} from './Contact';
 export {default as Cookies} from './Cookies';
 export {default as PrivacyPolicy} from './PrivacyPolicy';
 export {default as TermsofService} from './TermsofService';
+export {default as Dashboard} from './Dashboard';
+export {default as Profile} from './Profile';

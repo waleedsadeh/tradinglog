@@ -8,7 +8,7 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider, 
   GithubAuthProvider } from "firebase/auth";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -57,28 +57,44 @@ const signInWithEmail = async (email, password) => {
     throw error; // Throw the error to handle it in the component
   }
 };
+
 // Function to sign up or log in with Google
 const signUpWithGoogle = async () => {
   const provider = new GoogleAuthProvider();
+  // Request email scope
+  provider.addScope('email');
+  
   try {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
+    const userEmail = user.email || user.providerData[0]?.email || "No email provided";
+    
+    // Check if the user document already exists
+    const userDocRef = doc(db, "users", user.uid);
+    const userDoc = await getDoc(userDocRef);
+    
+    // Only create a new document if the user doesn't exist
+    if (!userDoc.exists()) {
+      const displayName = user.displayName || "";
+      const [firstName, lastName] = displayName.split(" ");
+      
+      // Store user data in Firestore only for new users
+      await setDoc(userDocRef, {
+        firstName: firstName || "N/A",
+        lastName: lastName || "N/A",
+        email: userEmail,
+        phoneNumber: "N/A",
+        createdAt: new Date(),
+        provider: "google" // Add provider information
+      });
+    }
 
-    // Extract first and last name from the display name
-    const displayName = user.displayName || "";
-    const [firstName, lastName] = displayName.split(" ");
-
-    // Store user data in Firestore
-    await setDoc(doc(db, "users", user.uid), {
-      firstName: firstName || "N/A", // Default to "N/A" if not available
-      lastName: lastName || "N/A",  // Default to "N/A" if not available
-      email: user.email,
-      phoneNumber: "N/A", // google did not give me the phone number for the user so i will leave it as null
-      createdAt: new Date(),
-    });
-
-    return user; // Return the signed-in user
+    return {
+      ...user,
+      email: userEmail
+    };
   } catch (error) {
+    console.error("Google sign-in error:", error);
     throw error;
   }
 };
@@ -86,25 +102,40 @@ const signUpWithGoogle = async () => {
 // Function to sign up or log in with GitHub
 const signUpWithGitHub = async () => {
   const provider = new GithubAuthProvider();
+  // Request email scope
+  provider.addScope('user:email');
+  
   try {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
+    const userEmail = user.email || user.providerData[0]?.email || "No email provided";
+    
+    // Check if the user document already exists
+    const userDocRef = doc(db, "users", user.uid);
+    const userDoc = await getDoc(userDocRef);
+    
+    // Only create a new document if the user doesn't exist
+    if (!userDoc.exists()) {
+      const displayName = user.displayName || "";
+      const [firstName, lastName] = displayName.split(" ");
+      
+      // Store additional user data in Firestore only for new users
+      await setDoc(userDocRef, {
+        firstName: firstName || "N/A",
+        lastName: lastName || "N/A",
+        email: userEmail,
+        phoneNumber: "N/A", 
+        createdAt: new Date(),
+        provider: "github" // Add provider information
+      });
+    }
 
-    // Extract first and last name from the display name
-    const displayName = user.displayName || "";
-    const [firstName, lastName] = displayName.split(" ");
-
-    // Store additional user data in Firestore
-    await setDoc(doc(db, "users", user.uid), {
-      firstName: firstName || "N/A", // Default to "N/A" if not available
-      lastName: lastName || "N/A",  // Default to "N/A" if not available
-      email: user.email,
-      phoneNumber: "N/A", // GitHub does not give phone number
-      createdAt: new Date(),
-    });
-
-    return user; // Return the signed-in user
+    return {
+      ...user,
+      email: userEmail
+    };
   } catch (error) {
+    console.error("GitHub sign-in error:", error);
     throw error;
   }
 };

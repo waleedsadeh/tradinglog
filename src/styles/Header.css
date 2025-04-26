@@ -67,6 +67,23 @@
     color: #80ff00;
 }
 
+/* Styling for the logout button to match sign-up */
+.log-out-button a{
+    color: #f7f7f7;
+    background-color: #9B29EE;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.log-out-button a:hover {
+    background-color: #f7f7f7;
+    color: #9B29EE;
+}
+
 @media screen and (max-width: 1024px) {
     .Header-logo {
         margin-left: 2rem;
@@ -119,6 +136,10 @@
     .Sign-up-button {
         margin-top: 1rem;
     }
+
+    .logout-button {
+        margin-top: 1rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -136,6 +157,10 @@
     }
 
     .menu a {
+        font-size: 1.1rem;
+    }
+
+    .logout-button {
         font-size: 1.1rem;
     }
 }

@@ -1,0 +1,167 @@
+.Profile {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #101010;
+    color: #f7f7f7;
+}
+
+.profile-container {
+    margin-top: 6.25rem;
+    margin-bottom: 6.25rem;
+    padding: 0 6.25rem;
+    flex: 1;
+}
+
+.profile-container h1 {
+    font-size: 4rem;
+    margin-bottom: 2.5rem;
+    color: #f7f7f7;
+    margin-block-start: 0px;
+}
+
+.profile-info {
+    max-width: 800px;
+    background-color: #191919;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.profile-field {
+    display: flex;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.profile-field-label {
+    flex: 0 0 200px;
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: #f7f7f7;
+}
+
+.profile-field-value {
+    flex-grow: 1;
+}
+
+.profile-field-display {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-field-display span {
+    font-size: 1.25rem;
+    color: #f7f7f7;
+}
+
+.edit-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.edit-icon:hover {
+    opacity: 1;
+}
+
+.profile-field-edit {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-field-edit input {
+    width: 60%;
+    padding: 0.5rem 1rem;
+    border: 2px solid #80ff00;
+    border-radius: 0.5rem;
+    background-color: #101010;
+    font-size: 1.25rem;
+    color: #f7f7f7;
+}
+
+.edit-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.save-button, .cancel-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.save-button {
+    background-color: #80ff00;
+    color: #101010;
+}
+
+.cancel-button {
+    background-color: #191919;
+    color: #f7f7f7;
+    border: 1px solid #f7f7f7;
+}
+
+.error-message {
+    color: #ff6b6b;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+}
+
+.success-message {
+    color: #51cf66;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+}
+
+/* Provider icon styles */
+.email-with-provider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.provider-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .profile-container {
+        padding: 0 2rem;
+    }
+
+    .profile-field {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-field-label {
+        margin-bottom: 0.5rem;
+    }
+    
+    .profile-container h1 {
+        font-size: 2.5rem;
+    }
+    
+    .profile-field-edit {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .profile-field-edit input {
+        width: 100%;
+        margin-bottom: 0.75rem;
+    }
+}

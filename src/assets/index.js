@@ -1,4 +1,3 @@
-import graphfield2 from './graphfield2.png';
 import menu from './menu.png';
 import efficient from './efficient.png';
 import newspaper from './newspaper.png';
@@ -11,9 +10,8 @@ import tick from './tick.png';
 import google from './google.png';
 import github from './github.png';
 import logo from './logo.png';
-
+import edit from './edit.png';
 export {
-    graphfield2,
     menu,
     efficient,
     newspaper,
@@ -25,5 +23,6 @@ export {
     tick,
     google,
     github,
-    logo
+    logo,
+    edit
 }

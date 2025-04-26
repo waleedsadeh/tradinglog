@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Footer, Header } from '../components';
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { 
   signInWithEmail, 
   signUpWithGoogle,
@@ -14,6 +15,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -23,6 +25,8 @@ function Login() {
     try {
       const user = await signInWithEmail(email, password);
       setSuccess(`User logged in successfully: ${user.email}`);
+      // Redirect to dashboard after successful login
+      navigate('/dashboard');
     } catch (err) {
       setError(err.message);
     }
@@ -35,6 +39,7 @@ function Login() {
     try {
       const user = await signUpWithGoogle();
       setSuccess(`User logged in successfully with Google: ${user.email}`);
+      navigate('/dashboard');
     } catch (err) {
       setError(err.message);
     }
@@ -47,6 +52,7 @@ function Login() {
     try {
       const user = await signUpWithGitHub();
       setSuccess(`User logged in successfully with GitHub: ${user.email}`);
+      navigate('/dashboard');
     } catch (err) {
       setError(err.message);
     }

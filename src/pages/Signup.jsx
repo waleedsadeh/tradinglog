@@ -3,6 +3,7 @@ import { Footer, Header } from "../components";
 import { signUpWithEmail, signUpWithGoogle, signUpWithGitHub } from "../firebase/firebase";
 import "../styles/Signup.css";
 import { google, github } from "../assets"; // Import Google and GitHub icons
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
   const [firstName, setFirstName] = useState("");
@@ -13,6 +14,7 @@ function Signup() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -27,6 +29,7 @@ function Signup() {
     try {
       const user = await signUpWithEmail(email, password, firstName, lastName, phoneNumber);
       setSuccess(`User signed up successfully: ${user.email}`);
+      navigate('/dashboard');
     } catch (err) {
       setError(err.message);
     }
@@ -39,6 +42,7 @@ function Signup() {
     try {
       const user = await signUpWithGoogle(firstName, lastName);
       setSuccess(`User signed up successfully with Google: ${user.email}`);
+      navigate('/dashboard');
     } catch (err) {
       setError(err.message);
     }
@@ -51,6 +55,7 @@ function Signup() {
     try {
       const user = await signUpWithGitHub(firstName, lastName);
       setSuccess(`User signed up successfully with GitHub: ${user.email}`);
+      navigate('/dashboard');
     } catch (err) {
       setError(err.message);
     }
