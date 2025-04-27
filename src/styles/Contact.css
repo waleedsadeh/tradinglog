@@ -148,7 +148,25 @@
         flex: 1; /* Equal width for both containers */
         width: 50%;
     }
-
+    
+    .contact-form-container h1 {
+        font-size: 2.5rem;
+    }
+    .contact-form-container p {
+        font-size: 1rem;
+    }
+    .contact-form-container label {
+        font-size: 1rem;
+    }
+    .contact-form-container input,
+    .contact-form-container textarea {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+    .contact-form-button {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
 }
 
 /* Mobile layout - stack containers vertically */

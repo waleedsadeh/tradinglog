@@ -159,3 +159,46 @@
 .signup-redirect a:hover {
     text-decoration: underline;
 }
+
+@media screen and (max-width: 768px) {
+    .login-container {
+        margin: 2rem auto;
+        padding: 2rem;
+        flex: 1;
+    }
+    .login-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .login-header p {
+        font-size: 1rem;
+    }
+
+    .input-container label {
+        font-size: 1rem;
+    }
+
+    .input-container input {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .login-button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .forgot-password a {
+        font-size: 0.875rem;
+    }
+
+    .social-login-button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+
+    }
+    
+    .signup-redirect p {
+        font-size: 0.875rem;
+    }
+}
