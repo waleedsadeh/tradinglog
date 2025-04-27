@@ -176,3 +176,137 @@
     background-color: #f7f7f7;
     color: #80ff00;
 }
+
+/* Mobile devices (smaller than iPad) */
+@media screen and (max-width: 767px) {
+    .signup-container {
+        margin: 2rem 2rem;
+        padding: 0 1rem;
+    }
+    
+    .signup-container h1 {
+        font-size: 2.5rem;
+    }
+    
+    .signup-container p {
+        font-size: 1rem;
+    }
+    
+    .social-signup-buttons {
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-signup-button {
+        width: 100%;
+        justify-content: center;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-group {
+        width: 90%;
+    }
+    
+    .form-row label {
+        font-size: 1rem;
+    }
+    
+    .form-row input {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .signup-button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Tablet/iPad specific styling - including exactly 768px width */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .signup-container {
+        margin: 3rem auto;
+        padding: 0 2rem;
+        max-width: 700px;
+    }
+    
+    .signup-container h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .signup-container p {
+        font-size: 1.15rem;
+    }
+    
+    .social-signup {
+        margin-top: 2rem;
+    }
+    
+    .social-signup-text {
+        margin-bottom: 2rem;
+    }
+    
+    .social-signup-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: center;
+    }
+    
+    .social-signup-button {
+        width: auto;
+        min-width: 180px;
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem;
+    }
+    
+    .or-divider {
+        margin: 2rem 0;
+    }
+    
+    .form-group {
+        width: 95%;
+        max-width: 650px;
+    }
+    
+    /* Keep the form rows horizontal on iPad */
+    .form-row {
+        flex-direction: row;
+        gap: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .form-row label {
+        font-size: 1.1rem;
+    }
+    
+    .form-row input {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem;
+        min-width: 150px;
+    }
+    
+    .password-input-hint {
+        font-size: 0.85rem;
+    }
+    
+    .signup-button {
+        width: 50%;
+        min-width: 200px;
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem;
+        margin-top: 1rem;
+    }
+}
+
