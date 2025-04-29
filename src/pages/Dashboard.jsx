@@ -10,7 +10,7 @@ import {
 } from "firebase/firestore";
 import StockSearch from '../components/StockSearch';
 import "../styles/Dashboard.css";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 
 function Dashboard() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -390,6 +390,80 @@ useEffect(() => {
     fetchProfitData();
     
   }, [currentUser]);
+
+  // Add this state with your other state variables
+const [weeklyProfitLossData, setWeeklyProfitLossData] = useState([]);
+
+// Add this useEffect to calculate weekly profit/loss data
+useEffect(() => {
+  if (!currentUser) return;
+  
+  const fetchWeeklyProfitLossData = async () => {
+    try {
+      const db = getFirestore();
+      const tradesRef = collection(db, `users/${currentUser.uid}/tradingData`);
+      const tradesSnapshot = await getDocs(tradesRef);
+      const trades = tradesSnapshot.docs.map(doc => ({
+        ...doc.data(),
+        timeSold: new Date(doc.data().timeSold)
+      }));
+      
+      // Sort trades by date
+      trades.sort((a, b) => a.timeSold - b.timeSold);
+      
+      // Group by week
+      const weekMap = {};
+      const now = new Date();
+      const currentYear = now.getFullYear();
+      
+      trades.forEach(trade => {
+        // Calculate trade profit
+        const profit = ((trade.sellPrice - trade.buyPrice) * trade.amountOfShares) - (trade.fees || 0);
+        
+        // Get week number
+        const tradeDate = trade.timeSold;
+        if (tradeDate.getFullYear() !== currentYear) return; // Only current year
+        
+        // Get the week number (0-based, where 0 is the first week)
+        const startOfYear = new Date(currentYear, 0, 1);
+        const days = Math.floor((tradeDate - startOfYear) / (24 * 60 * 60 * 1000));
+        const weekNum = Math.floor(days / 7);
+        
+        // Add to the right week
+        if (!weekMap[weekNum]) {
+          weekMap[weekNum] = {
+            weekNum,
+            profits: 0,
+            losses: 0
+          };
+        }
+        
+        // Add to profits or losses
+        if (profit >= 0) {
+          weekMap[weekNum].profits += profit;
+        } else {
+          weekMap[weekNum].losses += Math.abs(profit);
+        }
+      });
+      
+      // Convert to array
+      const weeklyData = Object.values(weekMap)
+        .sort((a, b) => a.weekNum - b.weekNum)
+        .map(week => ({
+          week: `Week ${week.weekNum + 1}`,
+          profits: week.profits,
+          losses: -week.losses // Negative for display
+        }));
+      
+      setWeeklyProfitLossData(weeklyData);
+    } catch (error) {
+      console.error("Error fetching weekly profit/loss data:", error);
+    }
+  };
+  
+  fetchWeeklyProfitLossData();
+}, [currentUser]);
+
 
   const [depositChartData, setDepositChartData] = useState([
     { month: 'Jan', amount: 0 },
@@ -954,7 +1028,49 @@ const getCurrentMonthName = () => {
                 </ResponsiveContainer>
               </div>
             </div>
-                          
+            {/* Weekly Profit/Loss Chart */}
+<div className="profit-loss-section">
+  <h2>Profits/Losses by Week</h2>
+  <div className="profit-loss-chart">
+    <ResponsiveContainer width="100%" height={300}>
+      <BarChart 
+        data={weeklyProfitLossData} 
+        margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+      >
+        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#333" />
+        <XAxis 
+          dataKey="week" 
+          axisLine={false}
+          tickLine={false}
+          style={{ fill: '#f7f7f7' }}
+        />
+        <YAxis 
+          axisLine={false}
+          tickLine={false}
+          style={{ fill: '#f7f7f7' }}
+          tickFormatter={(value) => `$${Math.abs(value)}`}
+        />
+        <Tooltip 
+          cursor={{ fill: 'rgba(255, 255, 255, 0.1)' }}
+          contentStyle={{
+            backgroundColor: '#191919',
+            border: 'none',
+            borderRadius: '0.5rem',
+            color: '#f7f7f7'
+          }}
+          formatter={(value, name) => {
+            const absValue = Math.abs(value);
+            const sign = name === 'profits' ? '+' : '-';
+            return [`${sign}$${absValue.toFixed(2)}`, name === 'profits' ? 'Profit' : 'Loss'];
+          }}
+          labelFormatter={(label) => `${label}`}
+        />
+        <Bar dataKey="profits" fill="#80ff00" radius={[16, 16, 0, 0]} />
+        <Bar dataKey="losses" fill="#DC143C" radius={[16, 16, 0, 0]} />
+      </BarChart>
+    </ResponsiveContainer>
+  </div>
+</div>
           </div>
         </div>
       </div>

@@ -299,3 +299,12 @@
   text-align: center;
 }
 
+.profit-loss-section {
+  background-color: #191919;
+  border-radius: 0.75rem;
+}
+
+.profit-loss-section h2 {
+  text-align: center;
+}
+
