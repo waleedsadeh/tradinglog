@@ -14,19 +14,32 @@ const StockSearch = ({ value, onChange }) => {
       setLoading(true);
       try {
         const response = await fetch(
-          `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${inputValue}&apikey=YOUR_API_KEY`
+          `https://api.twelvedata.com/symbol_search?symbol=${inputValue}&apikey=${process.env.REACT_APP_TWELVE_DATA_API_KEY}`
         );
         const data = await response.json();
-        
-        if (data.bestMatches) {
-          const stockOptions = data.bestMatches.map(match => ({
-            symbol: match['1. symbol'],
-            name: match['2. name']
-          }));
+        console.log('API Response:', data);
+
+        if (data.data) {
+          const stockOptions = data.data
+            // Filter only US stocks and common stocks
+            .filter(item => 
+              item.instrument_type === 'Common Stock' && 
+              (item.exchange === 'NYSE' || item.exchange === 'NASDAQ')
+            )
+            // Limit to first 10 results
+            .slice(0, 10)
+            // Map to required format
+            .map(item => ({
+              symbol: item.symbol,
+              name: item.instrument_name,
+              exchange: item.exchange
+            }));
+          console.log('Processed options:', stockOptions);
           setOptions(stockOptions);
         }
       } catch (error) {
         console.error('Error fetching stocks:', error);
+        setOptions([]);
       }
       setLoading(false);
     };
@@ -47,7 +60,9 @@ const StockSearch = ({ value, onChange }) => {
       }}
       options={options}
       getOptionLabel={(option) => 
-        typeof option === 'string' ? option : `${option.symbol} - ${option.name}`
+        typeof option === 'string' 
+          ? option 
+          : `${option.symbol} - ${option.name} (${option.exchange})`
       }
       renderInput={(params) => (
         <TextField

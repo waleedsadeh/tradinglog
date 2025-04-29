@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore";
 import StockSearch from '../components/StockSearch';
 import "../styles/Dashboard.css";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 function Dashboard() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -41,6 +42,12 @@ function Dashboard() {
     depositAmount: "", 
     whenTaken: ""
   });
+
+  const [tradingSummary, setTradingSummary] = useState({
+    mostTraded: [],
+    mostProfitable: [],
+    mostLoss: []
+  });
   
   // Success/error messages
   const [message, setMessage] = useState({ text: "", type: "" });
@@ -69,6 +76,66 @@ function Dashboard() {
     
     return () => unsubscribe();
   }, []);
+
+  // Add after other useEffect hooks
+useEffect(() => {
+  if (!currentUser) return;
+  
+  const fetchTradingSummary = async () => {
+    try {
+      const db = getFirestore();
+      const tradesRef = collection(db, `users/${currentUser.uid}/tradingData`);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      const tradesSnapshot = await getDocs(tradesRef);
+      const todaysTrades = tradesSnapshot.docs
+        .map(doc => ({ ...doc.data(), id: doc.id }))
+        .filter(trade => {
+          const tradeDate = new Date(trade.timeSold);
+          return tradeDate >= today;
+        });
+
+      // Most traded assets (change from 3 to 2)
+      const tradesByStock = todaysTrades.reduce((acc, trade) => {
+        acc[trade.stock] = (acc[trade.stock] || 0) + 1;
+        return acc;
+      }, {});
+
+      const mostTraded = Object.entries(tradesByStock)
+        .map(([symbol, count]) => ({ symbol, trades: count }))
+        .sort((a, b) => b.trades - a.trades)
+        .slice(0, 2);  // Changed from 3 to 2
+
+      // Calculate profit/loss for each trade
+      const tradesWithProfit = todaysTrades.map(trade => ({
+        ...trade,
+        profit: (trade.sellPrice - trade.buyPrice) * trade.amountOfShares - (trade.fees || 0)
+      }));
+
+      // Split into profitable and loss trades
+      const profitableTrades = tradesWithProfit
+        .filter(trade => trade.profit > 0)
+        .sort((a, b) => b.profit - a.profit)
+        .slice(0, 2);
+
+      const lossTrades = tradesWithProfit
+        .filter(trade => trade.profit < 0)
+        .sort((a, b) => a.profit - b.profit)
+        .slice(0, 2);
+
+      setTradingSummary({
+        mostTraded,
+        mostProfitable: profitableTrades,
+        mostLoss: lossTrades
+      });
+    } catch (error) {
+      console.error("Error fetching trading summary:", error);
+    }
+  };
+
+  fetchTradingSummary();
+}, [currentUser]);
 
   const handleTradingSubmit = async (e) => {
     e.preventDefault();
@@ -323,6 +390,126 @@ function Dashboard() {
     fetchProfitData();
     
   }, [currentUser]);
+
+  const [depositChartData, setDepositChartData] = useState([
+    { month: 'Jan', amount: 0 },
+    { month: 'Feb', amount: 0 },
+    { month: 'Mar', amount: 0 },
+    { month: 'Apr', amount: 0 },
+    { month: 'May', amount: 0 },
+    { month: 'Jun', amount: 0 },
+    { month: 'Jul', amount: 0 },
+    { month: 'Aug', amount: 0 },
+    { month: 'Sep', amount: 0 },
+    { month: 'Oct', amount: 0 },
+    { month: 'Nov', amount: 0 },
+    { month: 'Dec', amount: 0 }
+  ]);
+
+  // Add this useEffect to fetch deposit data
+  useEffect(() => {
+    if (!currentUser) return;
+
+    const fetchDepositData = async () => {
+      try {
+        const db = getFirestore();
+        const depositsRef = collection(db, `users/${currentUser.uid}/deposits`);
+        const depositsSnapshot = await getDocs(depositsRef);
+        const deposits = depositsSnapshot.docs.map(doc => ({
+          ...doc.data(),
+          whenTaken: doc.data().whenTaken ? new Date(doc.data().whenTaken) : new Date()
+        }));
+
+        // Initialize monthly totals and counts
+        const monthlyData = Array(12).fill().map(() => ({
+          amount: 0,
+          count: 0
+        }));
+
+        // Calculate total deposits and count for each month
+        deposits.forEach(deposit => {
+          const month = deposit.whenTaken.getMonth();
+          monthlyData[month].amount += parseFloat(deposit.depositAmount) || 0;
+          monthlyData[month].count += 1;
+        });
+
+        // Update chart data
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const newChartData = months.map((month, index) => ({
+          month,
+          amount: monthlyData[index].amount,
+          count: monthlyData[index].count
+        }));
+
+        setDepositChartData(newChartData);
+      } catch (error) {
+        console.error("Error fetching deposit data:", error);
+      }
+    };
+
+    fetchDepositData();
+  }, [currentUser]);
+
+
+  // Add this state for withdrawal chart data
+const [withdrawalChartData, setWithdrawalChartData] = useState([
+  { month: 'Jan', amount: 0, count: 0 },
+  { month: 'Feb', amount: 0, count: 0 },
+  { month: 'Mar', amount: 0, count: 0 },
+  { month: 'Apr', amount: 0, count: 0 },
+  { month: 'May', amount: 0, count: 0 },
+  { month: 'Jun', amount: 0, count: 0 },
+  { month: 'Jul', amount: 0, count: 0 },
+  { month: 'Aug', amount: 0, count: 0 },
+  { month: 'Sep', amount: 0, count: 0 },
+  { month: 'Oct', amount: 0, count: 0 },
+  { month: 'Nov', amount: 0, count: 0 },
+  { month: 'Dec', amount: 0, count: 0 }
+]);
+
+// Add this useEffect to fetch withdrawal data
+useEffect(() => {
+  if (!currentUser) return;
+
+  const fetchWithdrawalData = async () => {
+    try {
+      const db = getFirestore();
+      const withdrawalsRef = collection(db, `users/${currentUser.uid}/withdrawals`);
+      const withdrawalsSnapshot = await getDocs(withdrawalsRef);
+      const withdrawals = withdrawalsSnapshot.docs.map(doc => ({
+        ...doc.data(),
+        whenTaken: doc.data().whenTaken ? new Date(doc.data().whenTaken) : new Date()
+      }));
+
+      // Initialize monthly totals and counts
+      const monthlyData = Array(12).fill().map(() => ({
+        amount: 0,
+        count: 0
+      }));
+
+      // Calculate total withdrawals and count for each month
+      withdrawals.forEach(withdrawal => {
+        const month = withdrawal.whenTaken.getMonth();
+        monthlyData[month].amount += parseFloat(withdrawal.withdrawAmount) || 0;
+        monthlyData[month].count += 1;
+      });
+
+      // Update chart data
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const newChartData = months.map((month, index) => ({
+        month,
+        amount: monthlyData[index].amount,
+        count: monthlyData[index].count
+      }));
+
+      setWithdrawalChartData(newChartData);
+    } catch (error) {
+      console.error("Error fetching withdrawal data:", error);
+    }
+  };
+
+  fetchWithdrawalData();
+}, [currentUser]);
 
 
 
@@ -630,12 +817,144 @@ const getCurrentMonthName = () => {
                 <p className="stat-period"></p>
               </div>
               <div className="stats-summary-card">
-                <h3>Total Trades</h3>
+                <h3>Total Trades
+                  <br />
+                  <p></p>
+                </h3>
                 <p className="stat-value">{statsData.totalTrades}</p>
                 <p className="stat-period"></p>
               </div>
             </div>
+            <div className="stats-summary-cards-2">
+              <div className="trading-summary-section">
+                <h2>Most Traded Assets Today</h2>
+                <div className="trading-summary-list">
+                  {tradingSummary.mostTraded.length > 0 ? (
+                    tradingSummary.mostTraded.map((item, index) => (
+                      <div key={`traded-${index}`} className="trading-summary-item">
+                        <span className="trading-summary-text">{item.symbol}</span>
+                        <span className="trading-summary-value">{item.trades} Trades</span>
+                      </div>
+                    ))
+                  ) : (
+                    Array(2).fill(null).map((_, index) => (  // Changed from 3 to 2
+                      <div key={`traded-empty-${index}`} className="trading-summary-item empty">
+                        <span className="trading-summary-text">No data available</span>
+                      </div>
+                    ))
+                  )}
+                </div>
+              </div>
 
+              <div className="trading-summary-section">
+                <h2>Most Profitable Trades Today</h2>
+                <div className="trading-summary-list">
+                  {tradingSummary.mostProfitable.map((trade, index) => (
+                    <div key={`profit-${index}`} className="trading-summary-item">
+                      <span className="trading-summary-text">{trade.stock}</span>
+                      <span className="trading-summary-value profit">
+                        +${trade.profit.toFixed(2)}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+                
+              <div className="trading-summary-section">
+                <h2>Most Loss Trades Today</h2>
+                <div className="trading-summary-list">
+                  {tradingSummary.mostLoss.map((trade, index) => (
+                    <div key={`loss-${index}`} className="trading-summary-item">
+                      <span className="trading-summary-text">{trade.stock}</span>
+                      <span className="trading-summary-value loss">
+                        -${Math.abs(trade.profit).toFixed(2)}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="deposits-section">
+              <h2>Deposits Overview</h2>
+              <div className="deposits-chart">
+                <ResponsiveContainer width="100%" height={300}>
+                  <BarChart data={depositChartData}>
+                    <XAxis 
+                      dataKey="month" 
+                      axisLine={false}
+                      tickLine={false}
+                      style={{ fill: '#f7f7f7' }}
+                    />
+                    <YAxis 
+                      axisLine={false}
+                      tickLine={false}
+                      style={{ fill: '#f7f7f7' }}
+                    />
+                    <Tooltip 
+                      cursor={{ fill: 'rgba(255, 255, 255, 0.1)' }}
+                      contentStyle={{
+                        backgroundColor: '#191919',
+                        border: 'none',
+                        borderRadius: '0.5rem',
+                        color: '#f7f7f7'
+                      }}
+                      formatter={(value, name, props) => {
+                        // Get the count from the payload data
+                        const count = props.payload.count;
+                        const depositText = count === 1 ? 'deposit' : 'deposits';
+                        return [`$${value.toFixed(2)} (${count} ${depositText})`, 'Total'];
+                      }}
+                    />
+                    <Bar 
+                      dataKey="amount" 
+                      fill="#48D0E5" 
+                      radius={[16, 16, 0, 0]}
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+            <div className="withdrawals-section">
+              <h2>Withdrawals Overview</h2>
+              <div className="withdrawals-chart">
+                <ResponsiveContainer width="100%" height={300}>
+                  <BarChart data={withdrawalChartData}>
+                    <XAxis 
+                      dataKey="month" 
+                      axisLine={false}
+                      tickLine={false}
+                      style={{ fill: '#f7f7f7' }}
+                    />
+                    <YAxis 
+                      axisLine={false}
+                      tickLine={false}
+                      style={{ fill: '#f7f7f7' }}
+                    />
+                    <Tooltip 
+                      cursor={{ fill: 'rgba(255, 255, 255, 0.1)' }}
+                      contentStyle={{
+                        backgroundColor: '#191919',
+                        border: 'none',
+                        borderRadius: '0.5rem',
+                        color: '#f7f7f7'
+                      }}
+                      formatter={(value, name, props) => {
+                        // Get the count from the payload data
+                        const count = props.payload.count;
+                        const withdrawalText = count === 1 ? 'withdrawal' : 'withdrawals';
+                        return [`$${value.toFixed(2)} (${count} ${withdrawalText})`, 'Total'];
+                      }}
+                    />
+                    <Bar 
+                      dataKey="amount" 
+                      fill="#DC143C" 
+                      radius={[16, 16, 0, 0]}
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+                          
           </div>
         </div>
       </div>

@@ -225,3 +225,77 @@
     background-color: #80ff00 !important;
   }
 }
+
+/* Add to your Dashboard.css */
+.stats-summary-cards-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.trading-summary-section {
+  background-color: #191919;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.trading-summary-section h2 {
+  color: #f7f7f7;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.trading-summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.trading-summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background-color: #222;
+  border-radius: 0.5rem;
+}
+
+
+.trading-summary-text {
+  color: #f7f7f7;
+}
+
+.trading-summary-value {
+  font-weight: 500;
+  color: #f7f7f7;
+}
+
+.trading-summary-value.profit {
+  color: #80ff00;
+}
+
+.trading-summary-value.loss {
+  color: #DC143C;
+}
+
+.deposits-section {
+  background-color: #191919;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.deposits-section h2 {
+  text-align: center;
+}
+.withdrawals-section {
+  background-color: #191919;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+
+}
+
+.withdrawals-section h2 {
+  text-align: center;
+}
+
