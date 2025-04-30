@@ -1029,48 +1029,48 @@ const getCurrentMonthName = () => {
               </div>
             </div>
             {/* Weekly Profit/Loss Chart */}
-<div className="profit-loss-section">
-  <h2>Profits/Losses by Week</h2>
-  <div className="profit-loss-chart">
-    <ResponsiveContainer width="100%" height={300}>
-      <BarChart 
-        data={weeklyProfitLossData} 
-        margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-      >
-        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#333" />
-        <XAxis 
-          dataKey="week" 
-          axisLine={false}
-          tickLine={false}
-          style={{ fill: '#f7f7f7' }}
-        />
-        <YAxis 
-          axisLine={false}
-          tickLine={false}
-          style={{ fill: '#f7f7f7' }}
-          tickFormatter={(value) => `$${Math.abs(value)}`}
-        />
-        <Tooltip 
-          cursor={{ fill: 'rgba(255, 255, 255, 0.1)' }}
-          contentStyle={{
-            backgroundColor: '#191919',
-            border: 'none',
-            borderRadius: '0.5rem',
-            color: '#f7f7f7'
-          }}
-          formatter={(value, name) => {
-            const absValue = Math.abs(value);
-            const sign = name === 'profits' ? '+' : '-';
-            return [`${sign}$${absValue.toFixed(2)}`, name === 'profits' ? 'Profit' : 'Loss'];
-          }}
-          labelFormatter={(label) => `${label}`}
-        />
-        <Bar dataKey="profits" fill="#80ff00" radius={[16, 16, 0, 0]} />
-        <Bar dataKey="losses" fill="#DC143C" radius={[16, 16, 0, 0]} />
-      </BarChart>
-    </ResponsiveContainer>
-  </div>
-</div>
+            <div className="profit-loss-section">
+              <h2>Profits/Losses by Week</h2>
+              <div className="profit-loss-chart">
+                <ResponsiveContainer width="100%" height={300}>
+                  <BarChart 
+                    data={weeklyProfitLossData} 
+                    margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#333" />
+                    <XAxis 
+                      dataKey="week" 
+                      axisLine={false}
+                      tickLine={false}
+                      style={{ fill: '#f7f7f7' }}
+                    />
+                    <YAxis 
+                      axisLine={false}
+                      tickLine={false}
+                      style={{ fill: '#f7f7f7' }}
+                      tickFormatter={(value) => `$${Math.abs(value)}`}
+                    />
+                    <Tooltip 
+                      cursor={{ fill: 'rgba(255, 255, 255, 0.1)' }}
+                      contentStyle={{
+                        backgroundColor: '#191919',
+                        border: 'none',
+                        borderRadius: '0.5rem',
+                        color: '#f7f7f7'
+                      }}
+                      formatter={(value, name) => {
+                        const absValue = Math.abs(value);
+                        const sign = name === 'profits' ? '+' : '-';
+                        return [`${sign}$${absValue.toFixed(2)}`, name === 'profits' ? 'Profit' : 'Loss'];
+                      }}
+                      labelFormatter={(label) => `${label}`}
+                    />
+                    <Bar dataKey="profits" fill="#80ff00" radius={[16, 16, 0, 0]} />
+                    <Bar dataKey="losses" fill="#DC143C" radius={[16, 16, 0, 0]} />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
           </div>
         </div>
       </div>
