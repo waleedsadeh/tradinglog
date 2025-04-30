@@ -13,6 +13,22 @@ import "../styles/Dashboard.css";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 
 function Dashboard() {
+  // Add this state near your other state declarations
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  
+  // Add this useEffect to track window resizing
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  // Define a mobile breakpoint
+  const isMobile = windowWidth <= 768;
+
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
   
@@ -958,6 +974,7 @@ const getCurrentMonthName = () => {
                       axisLine={false}
                       tickLine={false}
                       style={{ fill: '#f7f7f7' }}
+                      tick={!isMobile} // Hide ticks on mobile
                     />
                     <YAxis 
                       axisLine={false}
@@ -998,6 +1015,7 @@ const getCurrentMonthName = () => {
                       axisLine={false}
                       tickLine={false}
                       style={{ fill: '#f7f7f7' }}
+                      tick={!isMobile} // Hide ticks on mobile
                     />
                     <YAxis 
                       axisLine={false}
