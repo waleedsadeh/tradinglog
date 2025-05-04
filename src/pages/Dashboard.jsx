@@ -708,7 +708,7 @@ const getCurrentMonthName = () => {
                     <label htmlFor="amountOfShares">Amount Of Shares:</label>
                     <input
                       type="number"
-                      id="amountOfShares"
+                      id="amountOfSharesdiscussion"
                       placeholder="Enter number of shares (e.g. 10)"
                       value={tradingData.amountOfShares}
                       onChange={(e) => setTradingData({...tradingData, amountOfShares: e.target.value})}
@@ -939,28 +939,44 @@ const getCurrentMonthName = () => {
               <div className="trading-summary-section">
                 <h2>Most Profitable Trades Today</h2>
                 <div className="trading-summary-list">
-                  {tradingSummary.mostProfitable.map((trade, index) => (
-                    <div key={`profit-${index}`} className="trading-summary-item">
-                      <span className="trading-summary-text">{trade.stock}</span>
-                      <span className="trading-summary-value profit">
-                        +${trade.profit.toFixed(2)}
-                      </span>
-                    </div>
-                  ))}
+                  {tradingSummary.mostProfitable.length > 0 ? (
+                    tradingSummary.mostProfitable.map((trade, index) => (
+                      <div key={`profit-${index}`} className="trading-summary-item">
+                        <span className="trading-summary-text">{trade.stock}</span>
+                        <span className="trading-summary-value profit">
+                          +${trade.profit.toFixed(2)}
+                        </span>
+                      </div>
+                    ))
+                  ) : (
+                    Array(2).fill(null).map((_, index) => (
+                      <div key={`profit-empty-${index}`} className="trading-summary-item empty">
+                        <span className="trading-summary-text">No data available</span>
+                      </div>
+                    ))
+                  )}
                 </div>
               </div>
                 
               <div className="trading-summary-section">
                 <h2>Most Loss Trades Today</h2>
                 <div className="trading-summary-list">
-                  {tradingSummary.mostLoss.map((trade, index) => (
-                    <div key={`loss-${index}`} className="trading-summary-item">
-                      <span className="trading-summary-text">{trade.stock}</span>
-                      <span className="trading-summary-value loss">
-                        -${Math.abs(trade.profit).toFixed(2)}
-                      </span>
-                    </div>
-                  ))}
+                  {tradingSummary.mostLoss.length > 0 ? (
+                    tradingSummary.mostLoss.map((trade, index) => (
+                      <div key={`loss-${index}`} className="trading-summary-item">
+                        <span className="trading-summary-text">{trade.stock}</span>
+                        <span className="trading-summary-value loss">
+                          -${Math.abs(trade.profit).toFixed(2)}
+                        </span>
+                      </div>
+                    ))
+                  ) : (
+                    Array(2).fill(null).map((_, index) => (
+                      <div key={`loss-empty-${index}`} className="trading-summary-item empty">
+                        <span className="trading-summary-text">No data available</span>
+                      </div>
+                    ))
+                  )}
                 </div>
               </div>
             </div>
