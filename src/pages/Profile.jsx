@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Header, Footer } from '../components';
 import { auth, db } from '../firebase/firebase';
-import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import { doc, getDoc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { edit, google, github } from '../assets';
-import { onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged, deleteUser, signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Profile.css';
 
 function Profile() {
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
     firstName: "",
     lastName: "",
@@ -24,6 +26,9 @@ function Profile() {
   const [isEditingFirstName, setIsEditingFirstName] = useState(false);
   const [isEditingLastName, setIsEditingLastName] = useState(false);
   const [isEditingPhoneNumber, setIsEditingPhoneNumber] = useState(false);
+  
+  // Delete account confirmation state
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   
   // Temporary values for editing
   const [tempFirstName, setTempFirstName] = useState("");
@@ -157,6 +162,53 @@ function Profile() {
     } catch (err) {
       console.error("Update error:", err);
       setError("Failed to update: " + err.message);
+    }
+  };
+
+  const handleDeleteAccount = async () => {
+    setError("");
+    
+    try {
+      const currentUser = auth.currentUser;
+      if (!currentUser) {
+        return;
+      }
+      
+      // Store the user ID before we sign out
+      const userId = currentUser.uid;
+      
+      // 1. Delete user data from Firestore
+      const userDocRef = doc(db, "users", userId);
+      await deleteDoc(userDocRef);
+      
+      // Delete any other collections associated with this user
+      // For example, if you have user-specific documents in other collections:
+      // const userPostsRef = collection(db, "posts");
+      // const q = query(userPostsRef, where("userId", "==", userId));
+      // const querySnapshot = await getDocs(q);
+      // querySnapshot.forEach(async (document) => {
+      //   await deleteDoc(doc(db, "posts", document.id));
+      // });
+      
+      // 2. Delete the user from Firebase Authentication
+      await deleteUser(currentUser);
+      
+      // 3. Sign out the user
+      await signOut(auth);
+      
+      // 4. Redirect to home page immediately
+      navigate("/");
+      
+    } catch (err) {
+      console.error("Delete account error:", err);
+      setError("Failed to delete account: " + err.message);
+      
+      // Special handling for some common errors
+      if (err.code === 'auth/requires-recent-login') {
+        setError("For security reasons, please log out and log in again before deleting your account.");
+      }
+      
+      setShowDeleteConfirmation(false);
     }
   };
 
@@ -350,6 +402,36 @@ function Profile() {
         )}
         
         {success && <p className="success-message">{success}</p>}
+        
+        {/* Delete Account Section */}
+        <div className="delete-account-section">
+          {!showDeleteConfirmation ? (
+            <button 
+              className="delete-account-button"
+              onClick={() => setShowDeleteConfirmation(true)}
+            >
+              Delete Account
+            </button>
+          ) : (
+            <div className="delete-confirmation">
+              <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+              <div className="delete-confirmation-buttons">
+                <button 
+                  className="delete-confirm-button"
+                  onClick={handleDeleteAccount}
+                >
+                  Yes, Delete My Account
+                </button>
+                <button 
+                  className="delete-cancel-button"
+                  onClick={() => setShowDeleteConfirmation(false)}
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
       <Footer />
     </div>

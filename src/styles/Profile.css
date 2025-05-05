@@ -159,6 +159,66 @@
     background-color: rgba(81, 207, 102, 0.1);
 }
 
+/* Delete Account Section Styling */
+.delete-account-section {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #393939;
+    text-align: center;
+}
+
+.delete-account-button {
+    background-color: #DC143C;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.delete-confirmation {
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+.delete-confirmation p {
+    color: #DC143C;
+    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
+}
+
+.delete-confirmation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.delete-confirm-button, .delete-cancel-button {
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.delete-confirm-button {
+    background-color: #DC143C;
+    color: #ffffff;
+}
+
+.delete-cancel-button {
+    background-color: #555;
+    color: #f7f7f7;
+}
+
+
+
 /* Tablet responsive styling */
 @media screen and (max-width: 768px) {
     .profile-container {
@@ -198,6 +258,15 @@
     .save-button, .cancel-button {
         width: 48%;
         font-size: 0.9rem;
+    }
+    
+    .delete-confirmation-buttons {
+        flex-direction: column;
+    }
+    
+    .delete-confirm-button, .delete-cancel-button {
+        width: 100%;
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -249,6 +318,20 @@
     
     .error-message, .success-message {
         font-size: 0.9rem;
+    }
+    
+    .delete-account-button {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+    }
+    
+    .delete-confirmation p {
+        font-size: 0.95rem;
+    }
+    
+    .delete-confirm-button, .delete-cancel-button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
     }
 }
 
