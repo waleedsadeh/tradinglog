@@ -173,37 +173,21 @@ function Profile() {
       if (!currentUser) {
         return;
       }
+            const userId = currentUser.uid;
       
-      // Store the user ID before we sign out
-      const userId = currentUser.uid;
-      
-      // 1. Delete user data from Firestore
       const userDocRef = doc(db, "users", userId);
       await deleteDoc(userDocRef);
       
-      // Delete any other collections associated with this user
-      // For example, if you have user-specific documents in other collections:
-      // const userPostsRef = collection(db, "posts");
-      // const q = query(userPostsRef, where("userId", "==", userId));
-      // const querySnapshot = await getDocs(q);
-      // querySnapshot.forEach(async (document) => {
-      //   await deleteDoc(doc(db, "posts", document.id));
-      // });
-      
-      // 2. Delete the user from Firebase Authentication
       await deleteUser(currentUser);
       
-      // 3. Sign out the user
       await signOut(auth);
       
-      // 4. Redirect to home page immediately
       navigate("/");
       
     } catch (err) {
       console.error("Delete account error:", err);
       setError("Failed to delete account: " + err.message);
       
-      // Special handling for some common errors
       if (err.code === 'auth/requires-recent-login') {
         setError("For security reasons, please log out and log in again before deleting your account.");
       }
@@ -222,7 +206,6 @@ function Profile() {
     });
   };
 
-  // Helper function to get provider icon
   const getProviderIcon = () => {
     switch(userData.provider) {
       case "google":

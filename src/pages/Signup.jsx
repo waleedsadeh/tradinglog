@@ -29,7 +29,7 @@ function Signup() {
     try {
       const user = await signUpWithEmail(email, password, firstName, lastName, phoneNumber);
       setSuccess(`User signed up successfully: ${user.email}`);
-      navigate('/dashboard');
+      navigate('/profile');
     } catch (err) {
       setError(err.message);
     }
@@ -42,7 +42,7 @@ function Signup() {
     try {
       const user = await signUpWithGoogle(firstName, lastName);
       setSuccess(`User signed up successfully with Google: ${user.email}`);
-      navigate('/dashboard');
+      navigate('/profile');
     } catch (err) {
       setError(err.message);
     }
@@ -55,7 +55,7 @@ function Signup() {
     try {
       const user = await signUpWithGitHub(firstName, lastName);
       setSuccess(`User signed up successfully with GitHub: ${user.email}`);
-      navigate('/dashboard');
+      navigate('/profile');
     } catch (err) {
       setError(err.message);
     }
