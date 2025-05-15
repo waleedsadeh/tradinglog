@@ -173,13 +173,13 @@ function Profile() {
       if (!currentUser) {
         return;
       }
-            const userId = currentUser.uid;
-      
-      const userDocRef = doc(db, "users", userId);
+      const userId = currentUser.uid;
+      const userDocRef = doc(db, "users", userId);   
+
       await deleteDoc(userDocRef);
-      
+
       await deleteUser(currentUser);
-      
+       
       await signOut(auth);
       
       navigate("/");
